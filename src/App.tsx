@@ -1,12 +1,15 @@
 import './App.css';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-// import ApiC from './callApi';
+//import ApiC from './callApi';
 
 import RouterHome from "./2_views/router_home";
 import ErrorPage from "./2_views/pages/error_page/error_page";
 
 import ControllerSkill from "./3_controllers/controller_skill";
-import ViewProyectsPage from "./2_views/pages/proyects_page/view_proyects_page";
+import ControllerReference from "./3_controllers/controller_reference";
+import ControllerStudie from "./3_controllers/controller_studie";
+import ControllerProject from "./3_controllers/controller_project";
+import ControllerExperience from "./3_controllers/controller_experience";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +21,8 @@ const router = createBrowserRouter([
         path: "/",
         element: <label>home page</label>,
       },
+      /////////////////////
+      ////////////// skill
      {
         path: "/skill/view",
         element: new ControllerSkill().Views(),
@@ -30,9 +35,61 @@ const router = createBrowserRouter([
         path: "/skill/list",
         element: new ControllerSkill().List(),
       },
+      /////////////////////
+      ////////////// reference
      {
-        path: "/proyect/view",
-        element: <ViewProyectsPage proyects={[{name:"hola"}]} />,
+        path: "/reference/view",
+        element: new ControllerReference().Views(),
+      },
+     {
+        path: "/reference/add",
+        element: new ControllerReference().Add(),
+      },
+     {
+        path: "/reference/list",
+        element: new ControllerReference().List(),
+      },
+      /////////////////////
+      ////////////// studie
+     {
+        path: "/studie/view",
+        element: new ControllerStudie().Views(),
+      },
+     {
+        path: "/studie/add",
+        element: new ControllerStudie().Add(),
+      },
+     {
+        path: "/studie/list",
+        element: new ControllerStudie().List(),
+      },
+      /////////////////////
+      ////////////// project
+     {
+        path: "/project/view",
+        element: new ControllerProject().Views(),
+      },
+     {
+        path: "/project/add",
+        element: new ControllerProject().Add(),
+      },
+     {
+        path: "/project/list",
+        element: new ControllerProject().List(),
+      },
+      /////////////////////
+      ////////////// experience
+     {
+        path: "/experience/view",
+        element: new ControllerExperience().Views(),
+      },
+     {
+        path: "/experience/add",
+        element: new ControllerExperience().Add(),
+      },
+     {
+        path: "/experience/list",
+        element: new ControllerExperience().List(),
       },
     ]
   },

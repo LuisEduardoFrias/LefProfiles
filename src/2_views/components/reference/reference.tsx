@@ -1,0 +1,12 @@
+
+import IReferenece from "../../../1_models/reference";
+import "./reference.css";
+
+export default function Referenece(reference: IReferenece) {
+  return (
+    <div className="constainer-reference" >
+      <label className="name" >{reference.Name}</label>
+      <label className="phone" >{reference.PhoneNumber}</label>
+    </div>
+  )
+}

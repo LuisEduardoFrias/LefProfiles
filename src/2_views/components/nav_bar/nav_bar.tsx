@@ -16,12 +16,13 @@ interface INavBarProps {
 }
 
 export default function NavBar(props: INavBarProps) : JSX.Element {
-  return (
+  return (<>
     <nav className="contontainer-menu">
       <ul className="first-list">
         { props.menus.map((e: IOption, i: Number) : JSX.Element => e.sub.length !== 0 ? OptionSub(e, i) : Option(e, `option-${i}`) )}
       </ul>
     </nav>
+    </>
   )
 }
 

@@ -1,0 +1,13 @@
+.header {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #002576;
+  border-block: 1px solid #5e5e5e;
+}
+
+.header label {
+  font-size: 30px;
+  font-weight: 900;
+}

@@ -13,11 +13,14 @@ export default class ControllerSkill {
  
   constructor() {
    this.skills = [];
-   this.skills.push(new Skill("5", "C shart", ""));
-   this.skills.push(new Skill("5", "C shart", ""));
-   this.skills.push(new Skill("5", "C shart", ""));
-   this.skills.push(new Skill("5", "C shart", ""));
-   this.skills.push(new Skill("5", "C shart", ""));
+   this.skills.push(new Skill("1", "C shart", "", 74));
+   this.skills.push(new Skill("2", "Node", "", 35));
+   this.skills.push(new Skill("3", "Java script", "", 40));
+   this.skills.push(new Skill("4", "Oracle PL", "", 30));
+   this.skills.push(new Skill("5", "Sql server", "", 40));
+   this.skills.push(new Skill("6", "React", "", 50));
+   this.skills.push(new Skill("7", "Html", "", 70));
+   this.skills.push(new Skill("8", "Css", "", 50));
  }
  
   Views() : JSX.Element {
@@ -35,12 +38,12 @@ export default class ControllerSkill {
     return <ListSkillsPage skills={this.skills} />
   }
   
-  Delete() : void {
+  Delete(key: string) : void {
   
   }
   
-  Post() : void {
-  
+  Post(newSkill: Skill) : void {
+    // daj.postAsync(newSkill);
   }
   
 }

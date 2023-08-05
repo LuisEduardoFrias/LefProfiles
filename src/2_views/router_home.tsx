@@ -128,9 +128,10 @@ export default function RouterHome() : JSX.Element {
         <Profile />
       </header>
       <nav>
-        <NavBar menus={menus} />
+
       </nav>
       <main>
+        <NavBar menus={menus} />
         <Outlet />
       </main>
     </div>
