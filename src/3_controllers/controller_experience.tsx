@@ -7,12 +7,15 @@ import AddExperiencesPage from "../2_views/pages/experience_page/add_experiences
 
 import {Experience} from "../1_models/experience";
 
+import daj from "../4_data_access/data_access.js";
+
 export default class ControllerExperience {
 
  experience : Experience[];
  
   constructor() {
     this.experience = [];
+    this.experience = daj.get(new Experience("","","","",[])) ?? [];
   }
  
   Views() : JSX.Element {

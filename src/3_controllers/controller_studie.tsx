@@ -7,12 +7,15 @@ import AddStudiesPage from "../2_views/pages/studie_page/add_studies_page";
 
 import {Studie} from "../1_models/studie";
 
+import daj from "../4_data_access/data_access.js";
+
 export default class ControllerStudies {
 
   studies : Studie[];
  
   constructor() {
     this.studies = [];
+    this.studies = daj.get(new Studie("","","","","",[])) ?? [];
   }
  
   Views() : JSX.Element {

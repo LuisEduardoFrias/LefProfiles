@@ -1,14 +1,32 @@
-// import Skill from "../../components/skill/skill";
-// import Porcentage from "../../components/porcentage/porcentage";
+import Studie from "../../components/studie/studie";
+
 import Header from "../../components/header/header";
 import OptionButton from "../../components/option_button/option_button";
-// 
- import IStudie from "../../../1_models/studie"
-// import "./view_skills_page.css"
+
+import IStudie from "../../../1_models/studie"
+import "./view_studie_page.css"
 
 interface IStudieProps {
   studies: IStudie[]
 }
+
+const buttons = [
+  {
+    Icon: "add",
+    IsLoad:false,
+    Href:"/studie/add",
+  },
+  {
+    Icon: "edit_note",
+    IsLoad:true,
+    Href: "/studie/list",
+  },
+  {
+    Icon: "delete_forever",
+    IsLoad:false,
+    Href: "/studie/list",
+  },
+]
 
 export default function ViewStudiesPage(props: IStudieProps) : JSX.Element
 {
@@ -16,11 +34,10 @@ export default function ViewStudiesPage(props: IStudieProps) : JSX.Element
     <>
     
       <Header tittle="Studies" color="" />
-{//    <OptionButton buttons={[{Name:"+/-"},{Name:"+"}]} />
-}
+      <OptionButton buttons={buttons} />
      
       <div className="container-page" >
-      view studie
+        { props.studies.map(e => Studie(e) ) }
       </div>
     </>
     )

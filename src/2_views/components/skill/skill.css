@@ -10,23 +10,24 @@
     box-shadow: inset -3px -3px 3px 0 #304990, -3px -3px 5px 0 #304990, 0 0 1px 1px #5582ff;
     border-width: 2px;
     border-style: double;
-    background-color: #1f1f1f;
     padding: 2px 2px;
     cursor: pointer;
  }
  
  .skill-container:have {
-     transform: scale(1.2);
+    transform: scale(1.2);
  }
  
  .skill-container:have ~ .skill-img {
-     transform: rotateY(360deg);
+    transform: rotateY(360deg);
  }
  
 .skill-img {
-    
+    width: 80%;
+    height: 80%;
 }
 
 .skill-name {
+  color: black;
     font-weight: bold;
 }

@@ -7,12 +7,15 @@ import AddProjectsPage from "../2_views/pages/project_page/add_projects_page";
 
 import {Project} from "../1_models/project";
 
+import daj from "../4_data_access/data_access.js";
+
 export default class ControllerProject {
 
  project : Project[];
  
   constructor() {
     this.project = [];
+    this.project = daj.get(new Project("","","",[],[])) ?? [];
   }
  
   Views() : JSX.Element {

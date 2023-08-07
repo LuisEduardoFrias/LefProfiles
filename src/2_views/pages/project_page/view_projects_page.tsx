@@ -1,14 +1,32 @@
-// import Skill from "../../components/skill/skill";
-// import Porcentage from "../../components/porcentage/porcentage";
+import Project from "../../components/project/project";
+
 import Header from "../../components/header/header";
 import OptionButton from "../../components/option_button/option_button";
-// 
- import IProject from "../../../1_models/project"
-// import "./view_skills_page.css"
+
+import IProject from "../../../1_models/project"
+import "./view_project_page.css"
 
 interface IProjectProps {
   projects: IProject[]
 }
+
+const buttons = [
+  {
+    Icon: "add",
+    IsLoad:false,
+    Href:"/project/add",
+  },
+  {
+    Icon: "edit_note",
+    IsLoad:true,
+    Href: "/project/list",
+  },
+  {
+    Icon: "delete_forever",
+    IsLoad:false,
+    Href: "/project/list",
+  },
+]
 
 export default function ViewProjectsPage(props: IProjectProps) : JSX.Element
 {
@@ -16,11 +34,11 @@ export default function ViewProjectsPage(props: IProjectProps) : JSX.Element
     <>
     
       <Header tittle="Projects" color="" />
-{//    <OptionButton buttons={[{Name:"+/-"},{Name:"+"}]} />
-}
+     <OptionButton buttons={buttons} />
+
      
       <div className="container-page" >
-       view projects
+        { props.projects.map(e => Project(e)) }
       </div>
     </>
     )

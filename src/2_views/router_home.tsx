@@ -7,116 +7,45 @@ import "./router_home.css"
 const menus : IOption[] = [
   {
     name:"Home",
-    icon:"production_quantity_limits",
+    icon:"home",
     href:"/",
     isLoad: false,
     sub: []
   },
   {
-    name:"Skills",
-    icon:"production_quantity_limits",
-    href:"#",
+    name:"Skill",
+    href: "/skill/view",
+    icon:"checklist_rtl",
     isLoad: false,
-    sub: [
-      {
-        name:"List Skill",
-        href: "/skill/list",
-        isLoad: false,
-        sub: []
-      },
-      {
-        name:"Views Skill",
-        href: "/skill/view",
-        isLoad: false,
-        sub: []
-      },
-      {
-        name:"Add Skill",
-        href: "/skill/add",
-        isLoad: false,
-        sub: []
-      }
-    ]
+    sub: []
   },
   {
-    name:"Proyects",
-    icon:"supervised_user_circle",
-    href:"#",
+    name:"Projects",
+    icon:"folder_copy",
+    href:"/project/view",
     isLoad: false,
-    sub: [
-      {
-        name:"List Proyects",
-        href: "/proyect/view",
-        isLoad: false,
-        sub: []
-      },
-      {
-        name:"Add Proyects",
-        href: "/proyect/add",
-        isLoad: false,
-        sub: []
-      }
-    ]
+    sub: []
   },
   {
     name:"Experience",
-    icon:"file_open",
-    href:"/buy/add",
+    icon:"work",
+    href:"/experience/view",
     isLoad: false,
-    sub: [
-      {
-        name:"List Experience",
-        href: "/experience/view",
-        isLoad: false,
-        sub: []
-      },
-      {
-        name:"Add Experience",
-        href: "/experience/add",
-        isLoad: false,
-        sub: []
-      }
-    ]
+    sub: []
   },
   {
     name:"Referenece",
-    icon:"view_timeline",
-    href:"/bill/view",
+    icon:"supervised_user_",
+    href: "/reference/view",
     isLoad: false,
-    sub: [
-      {
-        name:"List Referenece",
-        href: "/reference/view",
-        isLoad: false,
-        sub: []
-      },
-      {
-        name:"Add Referenece",
-        href: "/referenece/add",
-        isLoad: false,
-        sub: []
-      }
-    ]
+    sub: []
   },
   {
-    name:"Education",
+    name:"Studie",
     icon:"view_timeline",
-    href:"/bill/view",
+    href:"/studie/view",
     isLoad: false,
-    sub: [
-      {
-        name:"List Education",
-        href: "/education/view",
-        isLoad: false,
-        sub: []
-      },
-      {
-        name:"Add Education",
-        href: "/education/add",
-        isLoad: false,
-        sub: []
-      }
-    ]
+    sub: []
   }
 ]
 

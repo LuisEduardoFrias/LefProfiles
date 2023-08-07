@@ -27,8 +27,8 @@ export class Studie implements IStudie {
   Tittle:string,
   Institution:string,
   TittleImg:string,
+  Url:string,
   MoreEducation:IStudie[],
-  Url:string
   ) {
     this.Key = Key;
     this.Tittle = Tittle;

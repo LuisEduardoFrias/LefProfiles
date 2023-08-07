@@ -11,7 +11,7 @@ export class Skill implements ISkill {
   Name:string;
   UrlImage: string;
   Experience: number;
-  constructor(Key:string, Name: string, UrlImage: string, Experience: number) {
+  constructor(Key:string, Name: string, UrlImage: string, Experience: number,) {
     this.Key = Key;
     this.Name = Name;
     this.UrlImage = UrlImage;

@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import RouterHome from "./2_views/router_home";
 import ErrorPage from "./2_views/pages/error_page/error_page";
+import HomePage from "./2_views/pages/home_page/home_page";
 
 import ControllerSkill from "./3_controllers/controller_skill";
 import ControllerReference from "./3_controllers/controller_reference";
@@ -19,7 +20,7 @@ const router = createBrowserRouter([
     children: [
      {
         path: "/",
-        element: <label>home page</label>,
+        element: <HomePage/>,
       },
       /////////////////////
       ////////////// skill

@@ -3,7 +3,7 @@ interface IHomeProps {
   
 }
 
-export default function Home(props:IHomeProps) :JSX.Element {
+export default function HomePage(props:IHomeProps) :JSX.Element {
   return (
   <div>
     <label> Full stack .Net developer (Freelancer) </label>

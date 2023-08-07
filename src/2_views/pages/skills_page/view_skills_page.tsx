@@ -12,24 +12,21 @@ interface ISkillProps {
 
 const buttons = [
   {
-//     Name:"add",
     Icon: "add",
     IsLoad:false,
-    Href:"string",
+    Href:"/skill/add",
   },
   {
-//     Name:"edit",
     Icon: "edit_note",
     IsLoad:true,
-    Href:"string",
+    Href: "/skill/list",
   },
   {
-//     Name:"delete",
     Icon: "delete_forever",
     IsLoad:false,
-    Href:"string",
+    Href: "/skill/list",
   },
-  ]
+]
   
 export default function ViewSkillsPage(props: ISkillProps) : JSX.Element
 {

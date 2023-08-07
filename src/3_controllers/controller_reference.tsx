@@ -5,8 +5,9 @@ import ListReferencesPage from "../2_views/pages/reference_page/list_references_
 
 import AddReferencesPage from "../2_views/pages/reference_page/add_references_page";
 
-
 import {Reference} from "../1_models/reference";
+
+import daj from "../4_data_access/data_access.js";
 
 export default class ControllerReference {
 
@@ -14,6 +15,7 @@ export default class ControllerReference {
  
   constructor() {
     this.reference = [];
+    this.reference = daj.get(new Reference("","","")) ?? [];
   }
  
   Views() : JSX.Element {
@@ -38,5 +40,4 @@ export default class ControllerReference {
   Post(newReference: Reference) : void {
     // daj.postAsync(newSkill);
   }
-  
 }

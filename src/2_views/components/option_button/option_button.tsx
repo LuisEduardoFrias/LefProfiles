@@ -19,32 +19,51 @@ const StyledLink = styled(Link)`
   color: white;
   text-decoration: none;
   position: relative;
+  user-select: none;
 `;
 
-const StyledLink_M = styled(Link)`
+const StyledLinkM = styled(Link)`
   color: white;
   text-decoration: none;
   margin: 0.5rem;
   position: relative;
+  user-select: none;
 `;
 
+const StyleA : React.CSSProperties = {
+  color:"white", 
+  position: "relative",
+  userSelect: "none",
+}
+
+const StyleA_M : React.CSSProperties = {
+  color:"white", 
+  marginInline: "0.5rem",
+  position: "relative",
+  userSelect: "none",
+}
 
 export default function OptionButton(props: IOptionProps) : JSX.Element {
   return(
-    <div className="container-option-button" >
+    <ul className="container-option-button" >
       { props.buttons.map(e => e.IsLoad ?
-      ( <div className="btn-link" > 
+      ( <li className="btn-link" > 
+          <a href={e.Href} style={ e.Name ? StyleA_M : StyleA } >
           { e.Icon && <Icon>{e.Icon}</Icon> } 
-          <a href={e.Href} style={{color:"white", marginInline: "0.5rem", position: "relative" }} >{e?.Name}</a> 
-        </div>) : 
-      ( <div className="btn-link" >
-          { e.Icon && <Icon>{e.Icon}</Icon> } 
+          {e?.Name}</a> 
+        </li>) : 
+      ( <li className="btn-link" >
           { e?.Name ?
-            <StyledLink_M to={e.Href} >{e?.Name}</StyledLink_M> :
-            <StyledLink to={e.Href} ></StyledLink>
+            <StyledLinkM to={e.Href} >
+              { e.Icon && <Icon>{e.Icon}</Icon> } 
+              {e?.Name}
+            </StyledLinkM> :
+            <StyledLink to={e.Href} >
+              { e.Icon && <Icon>{e.Icon}</Icon> } 
+            </StyledLink>
           }
-        </div>)
+        </li>)
       ) }
-    </div>
+    </ul>
   )
 }
