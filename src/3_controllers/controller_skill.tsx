@@ -18,19 +18,6 @@ export default class ControllerSkill {
   constructor() {
     this.skills = [];
     this.skills = daj.get(new Skill("","","",0)) ?? [];
-    this.skills.push(new Skill("1", "C shart", GetImage("csharp.png"), 74));
-   this.skills.push(new Skill("2", "Node", GetImage("nodejs2.png"), 35));
-   this.skills.push(new Skill("3", "Java script", GetImage("javascript.png"), 40));
-   this.skills.push(new Skill("4", "Oracle PL", GetImage("oracle.png"), 30));
-   this.skills.push(new Skill("5", "Sql server", "https://seeklogo.com/images/M/microsoft-sql-server-logo-96AF49E2B3-seeklogo.com.png", 40));
-   this.skills.push(new Skill("6", "React", GetImage("react.png"), 50));
-   this.skills.push(new Skill("7", "Html", GetImage("html.png"), 70));
-   this.skills.push(new Skill("8", "Css", GetImage("css.png"), 50));
-   this.skills.push(new Skill("9", "Type Script", GetImage("typescript.png"), 70));
-   this.skills.push(new Skill("10", "Boot Strap", GetImage("bootstrap.png"), 30));
-   this.skills.push(new Skill("11", "Express", GetImage("express.png"), 40));
-   this.skills.push(new Skill("12", "Git", GetImage("git.png"), 50));
-   this.skills.push(new Skill("13", "GitHub", GetImage("github.png"), 60));
  }
  
   Views() : JSX.Element {

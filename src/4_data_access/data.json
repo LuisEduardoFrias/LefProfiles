@@ -1,59 +1,80 @@
 {
   "Skills": [
-    {
-      "Key": "1",
-      "Name": "C#",
-      "UrlImage": "cShart.png"
-    },
-    {
+   { 
+      "Key": "1", 
+      "Name": "C shart", 
+      "UrlImage": "csharp.png", 
+      "Experience": 74
+   },
+   {
       "Key": "2",
-      "Name": "React",
-      "UrlImage": "react.png"
-    },
-    {
+      "Name": "Node", 
+      "UrlImage": "nodejs2.png", 
+      "Experience": 35
+   },
+   {
       "Key": "3",
-      "Name": "Html 5",
-      "UrlImage": "html5.png"
-    },
-    {
-      "Key": "4",
-      "Name": "Css 3",
-      "UrlImage": "css3.png"
-    },
-    {
-      "Key": "5",
-      "Name": "Java Script",
-      "UrlImage": "javaScript.png"
-    },
-    {
-      "Key": "6",
-      "Name": "Sql Server",
-      "UrlImage": "sqlServer.png"
-    },
-    {
-      "Key": "7",
-      "Name": "Oracle",
-      "UrlImage": "oracle.png"
-    },
-    {
-      "Key": "8",
-      "Name": "Type Script",
-      "UrlImage": "typeScript.png"
-    },
-    {
-      "Key": "9",
-      "Name": "GitHub",
-      "UrlImage": "github.svg"
-    },
-    {
+      "Name": "Java script", 
+      "UrlImage": "javascript.png", 
+      "Experience": 40
+   },
+   { 
+      "Key": "4", 
+      "Name": "Oracle PL", 
+      "UrlImage": "oracle.png",
+      "Experience": 30
+   },
+   { 
+      "Key": "5", 
+      "Name": "Sql server",
+      "UrlImage": "https://seeklogo.com/images/M/microsoft-sql-server-logo-96AF49E2B3-seeklogo.com.png", 
+      "Experience": 40 
+   },
+   { 
+      "Key":  "6", 
+      "Name": "React", 
+      "UrlImage": "react.png", 
+      "Experience": 50 
+   },
+   { 
+      "Key":  "7", 
+      "Name": "Html", 
+      "UrlImage": "html.png",
+      "Experience": 70 },
+   { 
+      "Key": "8", 
+      "Name": "Css", 
+      "UrlImage": "css.png",
+      "Experience": 50 },
+   { 
+      "Key": "9", 
+      "Name": "Type Script", 
+      "UrlImage": "typescript.png",
+      "Experience": 70
+   },
+   { 
       "Key": "10",
-      "Name": "Node",
-      "UrlImage": "node.png"
-    },
-    {
-      "Key": "11",
-      "Name": "BootStrap",
-      "UrlImage": "bootStrap.png"
+      "Name": "Boot Strap", 
+      "UrlImage": "bootstrap.png", 
+      "Experience": 30
+   },
+   { 
+      "Key":  "11", 
+      "Name": "Express", 
+      "UrlImage": "express.png",
+      "Experience": 40
+   },
+   {
+      "Key": "12",
+      "Name": "Git", 
+      "UrlImage": "git.png",
+      "Experience": 50 
+   },
+   { 
+      "Key": "13",
+      "Name": "GitHub", 
+      "UrlImage": "github.png",
+      "Experience": 60
     }
   ],
   "Experiences": [

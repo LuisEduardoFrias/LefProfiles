@@ -35,14 +35,14 @@ const menus : IOption[] = [
   },
   {
     name:"Referenece",
-    icon:"supervised_user_",
+    icon:"supervised_user_circle",
     href: "/reference/view",
     isLoad: false,
     sub: []
   },
   {
     name:"Studie",
-    icon:"view_timeline",
+    icon:"menu_book",
     href:"/studie/view",
     isLoad: false,
     sub: []

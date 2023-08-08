@@ -1,20 +1,28 @@
 
-interface InputProps {
-  
+export interface IInputProps {
+  key: number;
+  tittle?:string;
+  type?: "text" | "date" | "textarea";
+  name: string;
+  value?: string |  number;
+  placeholder?: string;
+  className: string;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  readOnly?: boolean;
 }
 
-import default function Input(props: InputProps) {
+export default function Input(props: IInputProps) {
   return (
-    <div className="container-input" > 
-      <label for> {item?.title} </label> 
+    <div className="container-input" key={props.key} > 
+      <label> {props?.tittle} </label> 
       <input
-        type={item?.type}
-        name={item?.name}
-        value={item?.value}
-        placeholder={item?.placeholder}
-        className={_className}
-        onChange={handleChange}
-        readOnly={item?.readOnly} />
+        type={props?.type}
+        name={props.name}
+        value={props?.value}
+        placeholder={props?.placeholder}
+        className={props.className}
+        onChange={props.onChange}
+        readOnly={props?.readOnly} />
     </div>
   )
 }

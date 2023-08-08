@@ -1,26 +1,29 @@
 
-interface SelectProps {
-  title:string; 
-  name: string;
-  options: string;
-  _className: string;
+export type Option = {
+  value: string;
+  text: string;
 }
 
-import default function Select(props: SelectProps) {
-  const _options = [];
-  
-  for(const item in options)
-  { 
-    const ele = options[item];
-    _options.push(<option value={ele.value}>{ele.text}</option>)
-  }
-  
+export interface ISelectProps {
+  key: number;
+  tittle?:string; 
+  name: string;
+  options?: Option[];
+  className: string;
+  onChange: React.ChangeEventHandler<HTMLSelectElement>;
+}
+
+export default function Select(props: ISelectProps) {
   return(
-    <div className="container-select" >
-      <label for>{title}</label> 
-      <select name={name} className={_className} onChange={handleChange} >
-        <option>select {title}</option>
-        {_options}
+    <div className="container-select" key={props.key} >
+      <label>{props.tittle}</label> 
+      <select name={props.name} className={props.className} onChange={props.onChange} >
+        <option>select {props.tittle}</option>
+        { props?.options?.map((opcion: Option, index: number) => (
+          <option key={index} value={opcion.value}>
+            {opcion.text}
+          </option>
+        ))}
       </select>
     </div>
   )

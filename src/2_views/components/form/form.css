@@ -1,0 +1,12 @@
+
+.submit {
+  background-color:transparent;
+  border: 1px solid white;
+  box-shadow: 2px 2px 0 0 white;
+  padding: 2px 2px;
+  user-select: none;
+}
+
+.submit:active {
+  transform: scale(0.9);
+}
