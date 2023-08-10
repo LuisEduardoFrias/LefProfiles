@@ -1,4 +1,6 @@
 
+import "./select.css";
+
 export type Option = {
   value: string;
   text: string;
@@ -10,7 +12,7 @@ export interface ISelectProps {
   name: string;
   options?: Option[];
   className: string;
-  onChange: React.ChangeEventHandler<HTMLSelectElement>;
+  onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
 }
 
 export default function Select(props: ISelectProps) {
@@ -18,7 +20,7 @@ export default function Select(props: ISelectProps) {
     <div className="container-select" key={props.key} >
       <label>{props.tittle}</label> 
       <select name={props.name} className={props.className} onChange={props.onChange} >
-        <option>select {props.tittle}</option>
+        <option key="0" value={"undefined"} >select {props.tittle}</option>
         { props?.options?.map((opcion: Option, index: number) => (
           <option key={index} value={opcion.value}>
             {opcion.text}

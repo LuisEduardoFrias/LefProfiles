@@ -25,7 +25,7 @@ export default class ControllerReference {
   
   Add() : JSX.Element {
 
-    return <AddReferencesPage references={this.reference} />
+    return <AddReferencesPage />
   }
   
   List() : JSX.Element {
@@ -33,11 +33,11 @@ export default class ControllerReference {
     return <ListReferencesPage references={this.reference} />
   }
   
-  Delete(key: string) : void {
-  
+  static Delete(key: string) : boolean {
+    return true;
   }
   
-  Post(newReference: Reference) : void {
-    // daj.postAsync(newSkill);
+  static Post(newReference: Reference) : boolean {
+    return daj.post(new Reference("", newReference.Name, newReference.PhoneNumber));
   }
 }

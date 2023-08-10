@@ -15,28 +15,27 @@ export default class daj {
   //
   static post(obj) {
    
-    const pro = Reflect.get(data, obj.constructor.name);
+    const pro = Reflect.get(data, `${obj.constructor.name}s`);
 
     if (pro === undefined) {
+      alert("no property")
       if (!Reflect.set(obj, "Key", 1)) return false;
 
-      return Reflect.set(data, obj.constructor.Name, obj);
+      return Reflect.set(data, `${obj.constructor.name}s`, obj);
     }
  
     if (!Reflect.set(obj, "Key", pro.length + 1)) return false;
  
     pro.push(obj);
-
-    Reflect.set(data, obj.constructor.Name, pro);
- 
-    return true;
+    
+    return Reflect.set(data, `${obj.constructor.name}s`, pro);
   }
   
   //
   // put
   //
   static put(obj) {
-    let newPro = [...Reflect.get(data, obj.constructor.name)];
+    let newPro = [...Reflect.get(data, `${obj.constructor.name}s`)];
  
     const index = newPro.findIndex((e) => e.Key === obj.Key);
  
@@ -45,14 +44,14 @@ export default class daj {
       ...obj,
     };
  
-    return Reflect.set(data, obj.constructor.Name, newPro);
+    return Reflect.set(data, `${obj.constructor.name}s`, newPro);
   }
   
   //
   // delete
   //
   static delete(obj, Key) {
-    const pro = Reflect.get(data, obj.constructor.name);
+    const pro = Reflect.get(data, `${obj.constructor.name}s`);
  
     if (pro === undefined) return false;
  
@@ -63,6 +62,6 @@ export default class daj {
     } else {
       return false;
     }
-    return Reflect.set(data, obj.constructor.Name, pro);
+    return Reflect.set(data, `${obj.constructor.name}s`, pro);
   }
 }

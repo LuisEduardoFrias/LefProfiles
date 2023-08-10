@@ -24,8 +24,7 @@ export default class ControllerStudies {
   }
   
   Add() : JSX.Element {
-
-    return <AddStudiesPage studies={this.studies} />
+    return <AddStudiesPage />
   }
   
   List() : JSX.Element {
@@ -33,12 +32,13 @@ export default class ControllerStudies {
     return <ListStudiesPage studies={this.studies} />
   }
   
-  Delete(key: string) : void {
-  
+  static Delete(key: string) : boolean {
+    return true;
   }
   
-  Post(newStudie: Studie) : void {
-    // daj.postAsync(newSkill);
+  static Post(newStudie: Studie) : boolean {
+    // daj.post(newSkill);
+    return true;
   }
-  
+
 }

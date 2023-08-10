@@ -25,7 +25,7 @@ export default class ControllerExperience {
   
   Add() : JSX.Element {
 
-    return <AddExperiencesPage experiences={this.experience} />
+    return <AddExperiencesPage />
   }
   
   List() : JSX.Element {
@@ -33,12 +33,13 @@ export default class ControllerExperience {
     return <ListExperiencesPage experiences={this.experience} />
   }
   
-  Delete(key: string) : void {
-  
+  static Delete(key: string) : boolean {
+    return true;
   }
   
-  Post(newExperience: Experience) : void {
-    // daj.postAsync(newSkill);
+  static Post(newExperience: Experience) : boolean {
+    // daj.post(newSkill);
+    return true;
   }
   
 }

@@ -1,0 +1,17 @@
+
+.container-input {
+  display: grid;
+  flex-direction: row;
+  margin: 10px 10px;
+  justify-content: space-around;
+}
+
+.container-input label {
+  grid-area: label;
+  
+}
+
+.container-input input {
+  grid-area: input;
+
+}

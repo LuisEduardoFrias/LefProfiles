@@ -5,7 +5,7 @@ interface IProjectProps {
   projects: IProject[]
 }
 
-export default function AddProjectsPage(props: IProjectProps) : JSX.Element
+export default function AddProjectsPage() : JSX.Element
 {
     return (
       <div>

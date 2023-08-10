@@ -1,0 +1,30 @@
+
+.container-check-conten {
+  padding: 5px 5px;
+  box-sizing: border-box;
+}
+
+.container-check-conten label {
+  font-size: 18px;
+  font-weight: 900;
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
+
+.container-check {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  gap: 2px;
+  padding: 2px 2px;
+  box-sizing: border-box;
+}
+
+.container-option-check {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 3px;
+  box-sizing: border-box;
+}

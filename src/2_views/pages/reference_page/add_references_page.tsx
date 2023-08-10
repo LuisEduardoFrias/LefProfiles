@@ -1,18 +1,13 @@
-import IReference from "../../../1_models/reference"
-import BanckButton from "../../components/back_button/back_button";
-import Form, { Item, IFormElement, IState} from "../../components/form/form";
-import { IInputProps } from "../../components/form/input/input";
-import { ISelectProps } from "../../components/form/select/select";
-import { IRadioProps } from "../../components/form/radio/radio";
 
-interface IReferenceProps {
-  references: IReference[]
-}
+import AddData from "../../components/add_data/add_data";
 
-export default function AddReferencePage(props: IReferenceProps) : JSX.Element
+import ControllerReference from "../../../3_controllers/controller_reference";
+import { Item, InputProps, SelectProps, RadioProps, CheckProps } from "../../components/form/form";
+
+export default function AddReferencePage() : JSX.Element
 {
   
-  const forms: (ISelectProps | IRadioProps | IInputProps)[] = [
+  const forms: ( InputProps | SelectProps | RadioProps | CheckProps )[] = [
     {
       item : Item.input,
       name: "Name",
@@ -21,26 +16,23 @@ export default function AddReferencePage(props: IReferenceProps) : JSX.Element
     },
     {
       item : Item.input,
-      name: "PhoneNumbee",
+      name: "PhoneNumber",
       placeholder: "PhoneNumber",
       className: "Input_PhoneNumber",
     },
-    {
-      item : Item.radio,
-      name: "PhoneNumbee",
-      className: "Input_PhoneNumber",
-    }
   ]
   
-  function submit(state: IState, setState: any ) {
-    alert(JSON.stringify(state))
-  };
+  const isFildsRequired = (state:any) => {
+    return (!state?.Name || !state?.PhoneNumber);
+  }
   
-    return (
-      <Form // initState={}
-        forms={forms}
-        tittle="References"
-        textSubmit="send"
-        submit={submit} />
-    )
+  return ( 
+    <AddData 
+      forms={forms}
+      isFildsRequired={isFildsRequired}
+      tittle="Add Refecence"
+      textSubmit="send"
+      post={ControllerReference.Post}
+    />
+  )
 }

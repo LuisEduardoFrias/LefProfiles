@@ -26,8 +26,7 @@ export default class ControllerSkill {
   }
   
   Add() : JSX.Element {
-
-    return <AddSkillsPage skills={this.skills} />
+    return <AddSkillsPage />
   }
   
   List() : JSX.Element {
@@ -35,12 +34,13 @@ export default class ControllerSkill {
     return <ListSkillsPage skills={this.skills} />
   }
   
-  Delete(key: string) : void {
-  
+  static Delete(key: string) : boolean {
+    return true;
   }
   
-  Post(newSkill: Skill) : void {
-    // daj.postAsync(newSkill);
+  static Post(newSkill: Skill) : boolean {
+    // daj.post(newSkill);
+    return true;
   }
-  
+
 }

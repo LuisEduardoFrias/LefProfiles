@@ -23,19 +23,20 @@ export default class ControllerProject {
   }
   
   Add() : JSX.Element {
-    return <AddProjectsPage projects={this.project} />
+    return <AddProjectsPage />
   }
   
   List() : JSX.Element {
     return <ListProjectsPage projects={this.project} />
   }
   
-  Delete(key: string) : void {
-  
+  static Delete(key: string) : boolean {
+    return true;
   }
   
-  Post(newProject: Project) : void {
-    // daj.postAsync(newSkill);
+  static Post(newProject: Project) : boolean {
+    // daj.post(newSkill);
+    return true;
   }
   
 }

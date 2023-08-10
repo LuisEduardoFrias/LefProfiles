@@ -5,7 +5,7 @@ interface IStudieProps {
   studies: IStudie[]
 }
 
-export default function AddStudiesPage(props: IStudieProps) : JSX.Element
+export default function AddStudiesPage() : JSX.Element
 {
     return (
       <div>

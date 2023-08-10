@@ -1,25 +1,26 @@
 
-import "./input.css"
+import { useState } from "react";
+import Icon from '@mui/material/Icon';
+import "./array_input.css"
 
 enum Direction {
   row,
   column
 }
 
-export interface IInputProps {
+export interface IArrayInputProps {
   key: number;
-  tittle?:string;
-  type?: "text" | "color" | "date" | "datetime-local" | "email" | "file" | "hidden" | "image" | "month" | "number" | "password" | "range" | "tel" | "url" | "week",
+  tittle:string;
   name: string;
   direction?: Direction;
-  value?: string |  number;
   placeholder?: string;
   className: string;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  readOnly?: boolean;
 }
 
-export default function Input(props: IInputProps) {
+export default function Input(props: IArrayInputProps) {
+  
+  const [state, setState] = useState<string[]>([""])
   
   const getContainerInput = () => {
     if(props.tittle) {
@@ -47,17 +48,26 @@ export default function Input(props: IInputProps) {
     }
   }
   
+  const addInput = (event: any) => {
+    setState((prevState:any) => { return [...prevState, ""]; });
+  }
+  
   return (
     <div className="container-input" style={{...getContainerInput()}} key={props.key} > 
-      <label> {props?.tittle} </label> 
-      <input
-        type={props?.type}
-        name={props.name}
-        value={props?.value}
-        placeholder={props?.placeholder}
-        className={props.className}
-        onChange={props.onChange}
-        readOnly={props?.readOnly} />
+      <div>
+        <label> {props.tittle} </label> 
+        <button type="button" onClick={addInput}>
+          <Icon>add</Icon>
+        </button>
+        {state.map((text, index) => 
+          <input
+            name={props.name}
+//             value={text}
+            placeholder={props?.placeholder}
+            className={props.className}
+            onChange={props.onChange} />
+        )}
+      </div>
     </div>
   )
 }

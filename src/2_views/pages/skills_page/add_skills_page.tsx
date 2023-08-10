@@ -5,7 +5,7 @@ interface ISkillProps {
   skills: ISkill[]
 }
 
-export default function AddSkillsPage(props: ISkillProps) : JSX.Element
+export default function AddSkillsPage() : JSX.Element
 {
     return (
       <div>

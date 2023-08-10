@@ -1,27 +1,25 @@
 
-import "./input.css"
+import "./textarea.css"
 
 enum Direction {
   row,
   column
 }
 
-export interface IInputProps {
+export interface ITextareaProps {
   key: number;
   tittle?:string;
-  type?: "text" | "color" | "date" | "datetime-local" | "email" | "file" | "hidden" | "image" | "month" | "number" | "password" | "range" | "tel" | "url" | "week",
   name: string;
   direction?: Direction;
   value?: string |  number;
-  placeholder?: string;
   className: string;
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
   readOnly?: boolean;
 }
 
-export default function Input(props: IInputProps) {
+export default function Textarea(props: ITextareaProps) {
   
-  const getContainerInput = () => {
+  const getContainerTextarea= () => {
     if(props.tittle) {
       
       if(props?.direction === Direction.row) {
@@ -48,16 +46,15 @@ export default function Input(props: IInputProps) {
   }
   
   return (
-    <div className="container-input" style={{...getContainerInput()}} key={props.key} > 
+    <div className="container-input" style={{...getContainerTextarea()}} key={props.key} > 
       <label> {props?.tittle} </label> 
-      <input
-        type={props?.type}
+      <textarea
         name={props.name}
         value={props?.value}
-        placeholder={props?.placeholder}
         className={props.className}
         onChange={props.onChange}
-        readOnly={props?.readOnly} />
+        readOnly={props?.readOnly} >
+      </textarea>
     </div>
   )
 }
