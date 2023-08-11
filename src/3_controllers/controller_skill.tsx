@@ -39,8 +39,7 @@ export default class ControllerSkill {
   }
   
   static Post(newSkill: Skill) : boolean {
-    // daj.post(newSkill);
-    return true;
+    return daj.post(new Skill("", newSkill.Name, newSkill.UrlImage, newSkill.Experience));
   }
 
 }

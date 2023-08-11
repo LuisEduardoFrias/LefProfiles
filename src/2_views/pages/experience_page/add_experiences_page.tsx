@@ -6,6 +6,7 @@ import { Item, InputProps, SelectProps, RadioProps, CheckProps, Direction } from
 
 export default function AddExperiencePage() : JSX.Element
 {
+  
   const forms: ( InputProps | SelectProps | RadioProps | CheckProps )[] = [
     {
       item : Item.input,
@@ -35,7 +36,7 @@ export default function AddExperiencePage() : JSX.Element
   ]
   
   const isFildsRequired = (state:any) => {
-    return (!state?.Company || !state?.Description || !state.Position);
+    return (!state?.Company || !state?.Description || !state.Position || !state.Tacks );
   }
   
   return ( 

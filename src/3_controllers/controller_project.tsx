@@ -35,8 +35,11 @@ export default class ControllerProject {
   }
   
   static Post(newProject: Project) : boolean {
-    // daj.post(newSkill);
-    return true;
+   return daj.post(new Project("", 
+   newProject.Tittle, 
+   newProject.Description, 
+   newProject.Tegnologys, 
+   newProject.Repositorys));
   }
   
 }

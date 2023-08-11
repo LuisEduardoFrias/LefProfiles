@@ -38,8 +38,11 @@ export default class ControllerExperience {
   }
   
   static Post(newExperience: Experience) : boolean {
-    // daj.post(newSkill);
-    return true;
+   return daj.post(new Experience("", 
+   newExperience.Company, 
+   newExperience.Description, 
+   newExperience.Position, 
+   newExperience.Tacks));
   }
   
 }

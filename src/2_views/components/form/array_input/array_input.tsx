@@ -15,57 +15,82 @@ export interface IArrayInputProps {
   direction?: Direction;
   placeholder?: string;
   className: string;
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange: (event: any) => void;
 }
 
 export default function Input(props: IArrayInputProps) {
   
   const [state, setState] = useState<string[]>([""])
   
-  const getContainerInput = () => {
-    if(props.tittle) {
-      
-      if(props?.direction === Direction.row) {
-        return {
-          gridTemplateRows: "1fr",
-          gridTemplateColumns: "1fr 1fr",
-          gridTemplateAreas: '"label input"',
-          gap: "5px",
-        };
-      }
-      else
-        return {
-          gridTemplateRows: "1fr 1fr",
-          gridTemplateColumns: "1fr",
-          gridTemplateAreas: '"label" "input"',
-        };
-    } else {
-      return {
-        gridTemplateRows: "1fr",
-        gridTemplateColumns: "1fr",
-        gridTemplateAreas: '"input"',
-      }
-    }
-  }
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => 
+  {
+  const { value, dataset } = event.target;
+  const index = parseInt(dataset.key!, 10); // Remove the colon after "index"
+
+  setState((prevState) => {
+    const newState = [...prevState];
+    newState[index] = value;
+    return newState;
+  });
+
+  props.onChange({
+    target: {
+      name: props.name,
+      value: state.filter((e) => e !== ""),
+    },
+  });
+};
+  
+  // const handleChange = (event: any) => {
+//     const newState: any = state;
+//     newState[event.target.getAttribute("data-key")] = event.target.value;
+//     setState(newState);
+//     
+//     props.onChange({
+//       target: {
+//         name: props.name,
+//         value: state.filter(e => e !== ""),
+//      },
+//     });
+//   }
   
   const addInput = (event: any) => {
     setState((prevState:any) => { return [...prevState, ""]; });
   }
   
+  const remodeInput = (index: number) => {
+    const newState = state.filter((_, i) => i !== index);
+    setState(newState);
+  }
+  
   return (
-    <div className="container-input" style={{...getContainerInput()}} key={props.key} > 
-      <div>
-        <label> {props.tittle} </label> 
-        <button type="button" onClick={addInput}>
-          <Icon>add</Icon>
-        </button>
+    <div className="container-arrayinput" key={props.key}>
+      <label className="tittle-arrayinput"> {`${props.tittle} : ${state.length}`} </label> 
+      
+      <button className="button-arrayinput" type="button" onClick={addInput}>
+        <Icon>add</Icon>
+      </button>
+      
+      <div className="inputs-arrayinput">
         {state.map((text, index) => 
-          <input
-            name={props.name}
-//             value={text}
-            placeholder={props?.placeholder}
-            className={props.className}
-            onChange={props.onChange} />
+          <div className="unitinput-arrayinput">
+            <input
+              data-key={index}
+              id="input-arrayinput"
+              name={props.name}
+              value={state[index]}
+              placeholder={props?.placeholder}
+              className={props.className}
+              onChange={handleChange}
+            />
+            
+            { index >= 1 ? 
+              <button className="button-arrayinput" type="button"
+              onClick={(event:any) => remodeInput(index)}>
+                <Icon>remove</Icon>
+              </button> : null
+            }
+          </div>
         )}
       </div>
     </div>

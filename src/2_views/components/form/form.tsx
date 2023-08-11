@@ -122,8 +122,10 @@ export default function Form(props: IFormProps)
   
   const handleChange = (event: any) : void => {
     const { name, value } = event.target;
+    
     const newState = state;
     Reflect.set(newState, name, value);
+    
     setState(newState)
   }
  
@@ -210,6 +212,7 @@ export default function Form(props: IFormProps)
         name={arrayinputEle.name}
         tittle={arrayinputEle.tittle}
         direction={arrayinputEle.direction}
+        placeholder={arrayinputEle?.placeholder}
         className={_className}
         onChange={handleChange} />)
     }
