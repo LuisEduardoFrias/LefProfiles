@@ -28,17 +28,29 @@ export default class ControllerStudies {
   }
   
   List() : JSX.Element {
-
     return <ListStudiesPage studies={this.studies} />
   }
   
   static Delete(key: string) : boolean {
-    return true;
+    return daj.delete(new Studie("", "", "", "", "", []), key);
   }
   
   static Post(newStudie: Studie) : boolean {
-    // daj.post(newSkill);
-    return true;
+    return daj.post(new Studie(
+    newStudie.Key, 
+    newStudie.Tittle,
+    newStudie.Institution,
+    newStudie.TittleImg,
+    newStudie.Url,
+    newStudie.MoreEducation));
   }
-
+  
+  static Put(studie: Studie) : boolean {
+    return daj.put(new Studie(studie.Key, 
+    studie.Tittle,
+    studie.Institution,
+    studie.TittleImg,
+    studie.Url,
+    studie.MoreEducation));
+  }
 }

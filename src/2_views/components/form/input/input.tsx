@@ -1,5 +1,6 @@
 
 import "./input.css"
+import { useState, useEffect } from "react";
 
 enum Direction {
   row,
@@ -15,11 +16,31 @@ export interface IInputProps {
   value?: string |  number;
   placeholder?: string;
   className: string;
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange: (event: any) => void;
   readOnly?: boolean;
 }
 
 export default function Input(props: IInputProps) {
+ 
+  const [state, setState] = useState<string>(`${props?.value}`)
+  
+  useEffect(()=>{
+    if(props?.value) {
+    props.onChange({
+      target: {
+        name: props.name,
+        value: state ?? props?.value
+      },
+    })
+  };
+  },[state]);
+  
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => 
+  { 
+    const { value } = event.target;
+    
+    setState(value);
+  };
   
   const getContainerInput = () => {
     if(props.tittle) {
@@ -53,10 +74,10 @@ export default function Input(props: IInputProps) {
       <input
         type={props?.type}
         name={props.name}
-        value={props?.value}
+        value={state}
         placeholder={props?.placeholder}
         className={props.className}
-        onChange={props.onChange}
+        onChange={handleChange}
         readOnly={props?.readOnly} />
     </div>
   )

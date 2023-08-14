@@ -35,16 +35,19 @@ export default class daj {
   // put
   //
   static put(obj) {
+    
     let newPro = [...Reflect.get(data, `${obj.constructor.name}s`)];
- 
+    
     const index = newPro.findIndex((e) => e.Key === obj.Key);
  
     newPro[index] = {
       ...newPro[index],
       ...obj,
     };
- 
-    return Reflect.set(data, `${obj.constructor.name}s`, newPro);
+
+    Reflect.set(data, `${obj.constructor.name}s`, newPro);
+    
+    return true
   }
   
   //
@@ -52,7 +55,7 @@ export default class daj {
   //
   static delete(obj, Key) {
     const pro = Reflect.get(data, `${obj.constructor.name}s`);
- 
+
     if (pro === undefined) return false;
  
     const index = pro.findIndex((e) => e.Key === Key);
@@ -62,6 +65,7 @@ export default class daj {
     } else {
       return false;
     }
+    
     return Reflect.set(data, `${obj.constructor.name}s`, pro);
   }
 }

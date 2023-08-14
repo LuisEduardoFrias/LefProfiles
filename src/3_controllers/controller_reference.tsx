@@ -19,25 +19,26 @@ export default class ControllerReference {
   }
  
   Views() : JSX.Element {
-  
     return <ViewReferencesPage references={this.reference} />
   }
   
   Add() : JSX.Element {
-
     return <AddReferencesPage />
   }
   
   List() : JSX.Element {
-
     return <ListReferencesPage references={this.reference} />
   }
   
   static Delete(key: string) : boolean {
-    return true;
+    return daj.delete(new Reference("", "", ""), key);
   }
   
   static Post(newReference: Reference) : boolean {
     return daj.post(new Reference("", newReference.Name, newReference.PhoneNumber));
+  }
+  
+  static Put(reference: Reference) : boolean {
+    return daj.put(new Reference(reference.Key, reference.Name, reference.PhoneNumber));
   }
 }

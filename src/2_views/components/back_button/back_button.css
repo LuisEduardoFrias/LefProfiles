@@ -14,12 +14,12 @@ button {
   margin: 5px 5px;
   min-width: 30px;
   border: 1px solid #000000;
-  box-shadow: 0 0 1px 1px white, inset 0 0 1px 1px white;
+  box-shadow: 0 0 1px 1px white inset, 1px 1px 0 0 white;
   font-size: 18px;
   font-weight: 900;
 }
 
 button:active {
   transform: scale(0.9);
-  box-shadow: 2px 2px 1px 0px transparent;
+  box-shadow: 0 0 1px 1px white inset;
 }

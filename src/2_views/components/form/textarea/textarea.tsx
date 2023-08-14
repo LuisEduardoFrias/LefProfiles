@@ -12,6 +12,7 @@ export interface ITextareaProps {
   name: string;
   direction?: Direction;
   value?: string |  number;
+  placeholder?: string;
   className: string;
   onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
   readOnly?: boolean;
@@ -53,6 +54,7 @@ export default function Textarea(props: ITextareaProps) {
         value={props?.value}
         className={props.className}
         onChange={props.onChange}
+        placeholder={props.placeholder}
         readOnly={props?.readOnly} >
       </textarea>
     </div>

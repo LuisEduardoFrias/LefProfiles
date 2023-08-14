@@ -19,22 +19,19 @@ export default class ControllerExperience {
   }
  
   Views() : JSX.Element {
-  
     return <ViewExperiencesPage experiences={this.experience} />
   }
   
   Add() : JSX.Element {
-
     return <AddExperiencesPage />
   }
   
   List() : JSX.Element {
-
     return <ListExperiencesPage experiences={this.experience} />
   }
   
   static Delete(key: string) : boolean {
-    return true;
+    return daj.delete(new Experience("", "", "", "", []), key);
   }
   
   static Post(newExperience: Experience) : boolean {
@@ -45,4 +42,11 @@ export default class ControllerExperience {
    newExperience.Tacks));
   }
   
+  static Put(experience: Experience) : boolean {
+    return daj.put(new Experience(experience.Key, 
+    experience.Company, 
+    experience.Description, 
+    experience.Position, 
+    experience.Tacks));
+  }
 }

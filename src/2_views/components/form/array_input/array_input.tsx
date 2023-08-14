@@ -24,35 +24,22 @@ export default function Input(props: IArrayInputProps) {
   
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => 
   {
-  const { value, dataset } = event.target;
-  const index = parseInt(dataset.key!, 10); // Remove the colon after "index"
-
-  setState((prevState) => {
-    const newState = [...prevState];
-    newState[index] = value;
-    return newState;
-  });
-
-  props.onChange({
-    target: {
-      name: props.name,
-      value: state.filter((e) => e !== ""),
-    },
-  });
-};
-  
-  // const handleChange = (event: any) => {
-//     const newState: any = state;
-//     newState[event.target.getAttribute("data-key")] = event.target.value;
-//     setState(newState);
-//     
-//     props.onChange({
-//       target: {
-//         name: props.name,
-//         value: state.filter(e => e !== ""),
-//      },
-//     });
-//   }
+    const { value, dataset } = event.target;
+    const index = parseInt(dataset.key!, 10);
+    
+    setState((prevState) => {
+      const newState = [...prevState];
+      newState[index] = value;
+      return newState;
+    });
+    
+    props.onChange({
+      target: {
+        name: props.name,
+        value: state.filter((e) => e !== ""),
+      },
+    });
+  };
   
   const addInput = (event: any) => {
     setState((prevState:any) => { return [...prevState, ""]; });

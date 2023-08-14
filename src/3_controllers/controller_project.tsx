@@ -31,15 +31,21 @@ export default class ControllerProject {
   }
   
   static Delete(key: string) : boolean {
-    return true;
+    return daj.delete(new Project("", "", "", [], []), key);
   }
   
   static Post(newProject: Project) : boolean {
-   return daj.post(new Project("", 
-   newProject.Tittle, 
-   newProject.Description, 
-   newProject.Tegnologys, 
-   newProject.Repositorys));
+    return daj.post(new Project("", 
+    newProject.Tittle, 
+    newProject.Description, 
+    newProject.Tegnologys, 
+    newProject.Repositorys));
   }
   
+  static Put(project: Project) : boolean {
+    return daj.put(new Project(project.Key, project.Tittle, 
+    project.Description, 
+    project.Tegnologys, 
+    project.Repositorys));
+  }
 }

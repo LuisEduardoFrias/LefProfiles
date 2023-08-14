@@ -33,19 +33,6 @@ interface IEraceElement {
   className: string;
 }
 
-// export interface IFormElement {
-//   item : Item;
-//   tittle?: string;
-//   type?: "textarea" | "text" | "date" | undefined;
-//   name: string;
-//   placeholder?: string;
-//   className: string;
-//   value?: string | number;
-//   readOnly?: boolean;
-//   options?: Option[];
-//   radios?: _Radio[];
-// }
-
 export type SelectProps = Omit<ISelectProps, 'onChange' | 'key' > & {
   item:Item;
 };
@@ -201,6 +188,7 @@ export default function Form(props: IFormProps)
         name={textareaEle.name}
         tittle={textareaEle.tittle}
         direction={textareaEle.direction}
+        placeholder={textareaEle?.placeholder}
         className={_className}
         onChange={handleChange} />)
     }

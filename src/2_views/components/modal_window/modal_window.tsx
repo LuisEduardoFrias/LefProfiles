@@ -11,6 +11,7 @@ export const enum ModalType {
 
 interface IModalWindowsProps {
   show:boolean,
+  setShow?: (state:boolean) => void,
   type: ModalType,
   tittle:string,
   state?: any,
@@ -35,6 +36,8 @@ export default function ModalWindow(props: IModalWindowsProps) {
   
   const _onClick = (event: any, click: any) => {
     if(click) click(event);
+    
+    if(props.setShow) props?.setShow(false);
     
     const windows : HTMLElement | null = document.querySelector(".modal-windows");
     

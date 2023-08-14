@@ -21,7 +21,6 @@ export default class ControllerSkill {
  }
  
   Views() : JSX.Element {
-  
     return <ViewSkillsPage skills={this.skills} />
   }
   
@@ -30,16 +29,19 @@ export default class ControllerSkill {
   }
   
   List() : JSX.Element {
-
     return <ListSkillsPage skills={this.skills} />
   }
   
   static Delete(key: string) : boolean {
-    return true;
+    return daj.delete(new Skill("", "", "", 0), key);
   }
   
   static Post(newSkill: Skill) : boolean {
     return daj.post(new Skill("", newSkill.Name, newSkill.UrlImage, newSkill.Experience));
   }
-
+  
+  static Put(skill: Skill) : boolean {
+    return daj.put(new Skill(skill.Key, skill.Name, skill.UrlImage,
+    skill.Experience));
+  }
 }
