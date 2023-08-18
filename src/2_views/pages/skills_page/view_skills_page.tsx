@@ -18,7 +18,7 @@ const buttons = [
   },
   {
     Icon: "edit_note",
-    IsLoad:true,
+    IsLoad:false,
     Href: "/skill/list",
   },
   {
@@ -40,14 +40,14 @@ export default function ViewSkillsPage(props: ISkillProps) : JSX.Element
       <div className="container-page" >
       
         <div className="container-card" >
-          {props.skills.map(e => Skill(e))}
+          {props.skills.map((e,index) => Skill(e, index))}
         </div>
         
         <br />
         <label>Levers</label>
         
         <div className="container-range" >
-          {props.skills.map(e => <Porcentage value={e.Experience} direction="row" tittle={e.Name} />)}
+          {props.skills.map((e, index) => <Porcentage key={index} value={e.Experience} direction="row" tittle={e.Name} />)}
         </div>
         
       </div>

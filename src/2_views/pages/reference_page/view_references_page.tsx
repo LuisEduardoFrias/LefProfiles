@@ -18,7 +18,7 @@ const buttons = [
   },
   {
     Icon: "edit_note",
-    IsLoad:true,
+    IsLoad:false,
     Href: "/reference/list",
   },
   {

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import Icon from '@mui/material/Icon';
+import { Icon } from '@mui/material';
+import { Box } from '@mui/system';
 import styled from "styled-components";
 
 import "./option_button.css";
@@ -33,12 +34,16 @@ const StyledLinkM = styled(Link)`
 const StyleA : React.CSSProperties = {
   color:"white", 
   position: "relative",
+  padding: "auto",
   userSelect: "none",
 }
 
 const StyleA_M : React.CSSProperties = {
   color:"white", 
   marginInline: "0.5rem",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
   position: "relative",
   userSelect: "none",
 }
@@ -48,9 +53,12 @@ export default function OptionButton(props: IOptionProps) : JSX.Element {
     <ul className="container-option-button" >
       { props.buttons.map(e => e.IsLoad ?
       ( <li className="btn-link" > 
-          <a href={e.Href} style={ e.Name ? StyleA_M : StyleA } >
-          { e.Icon && <Icon>{e.Icon}</Icon> } 
-          {e?.Name}</a> 
+          <Box>
+            <a href={e.Href}  >
+              { e.Icon && <Icon>{e.Icon}</Icon> } 
+              {e?.Name}
+            </a>
+          </Box>
         </li>) : 
       ( <li className="btn-link" >
           { e?.Name ?

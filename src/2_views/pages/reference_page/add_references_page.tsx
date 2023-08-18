@@ -19,6 +19,7 @@ export default function AddReferencePage() : JSX.Element
       item : Item.input,
       name: "Key",
       value: _obj?.Key,
+      reset: false,
       placeholder: "Key",
       className: "Input_Key",
     }
@@ -29,12 +30,14 @@ export default function AddReferencePage() : JSX.Element
       item : Item.input,
       name: "Name",
       value: _obj?.Name ?? "",
+      reset: false,
       placeholder: "Name",
       className: "Input_Name",
     },
     {
       item : Item.input,
       name: "PhoneNumber",
+      reset: false,
       value: _obj?.PhoneNumber ?? "",
       placeholder: "PhoneNumber",
       className: "Input_PhoneNumber",

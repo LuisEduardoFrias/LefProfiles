@@ -11,6 +11,7 @@ import "./add_data.css";
 
 
 interface IAddDataProps {
+  initialState?: any;
   forms:  ( InputProps | SelectProps | RadioProps | CheckProps )[];
   isFildsRequired: (state: any) => boolean;
   tittle: string;
@@ -125,16 +126,16 @@ export default function AddData(props: IAddDataProps) : JSX.Element
     dialog: "",
   });
 
-
   function onClick(event: any) {
     setModal((prevState)=>{return {...prevState, show: false}});
   };
   
-  function submit(state: any, setState: any ) {
+  function submit(state: any, setState: any, fildsErase: () => void ) {
     
-    setState((prevState: any) => { return {...prevState, loader: false}})
+    //setState((prevState: any) => { return {...prevState, loader: false}})
     
     if(props.isFildsRequired(state)) {
+      
       setModal({
       show: true,
       type: ModalType.error,
@@ -142,6 +143,7 @@ export default function AddData(props: IAddDataProps) : JSX.Element
       dialog: props.errorDialog ?? "Se require que algunos campos, verifique.",
       onClickC: onClick,
       })
+      
     }
     else {
       
@@ -158,28 +160,35 @@ export default function AddData(props: IAddDataProps) : JSX.Element
           
           setTimeout(()=>
           {
-            setState((prevState: any) => { return {...prevState, loader: false}});
             
             const newState : any = state;
             delete newState.loader;
             
             if(props.post(newState)) {
-              setModal2((prevState)=>{return {...prevState,
+              setModal2((prevState) => { return {...prevState,
               type: ModalType.notification,
               tittle: props.notifiSendDataTittle ?? "Notificacion",
               dialog: props.notifiSendDataDialog ?? "Enviado corectamente.",
               show: true}});
+              
+              fildsErase();
+              
+              setState((prevState: any) => { return {...prevState, loader: false, erase: true}});
+              
             } else {
-              setModal2((prevState)=>{return {...prevState,
+              setModal2((prevState) => {return {...prevState,
               type: ModalType.error,
               tittle: props.errorSendDataTittle ?? "Error",
               dialog: props.errorSendDataDialog ??  "Ocurrio un error al enviar los datos.",
               show: true}});
+              
+              setState((prevState: any) => { return {...prevState, loader: false}});
+              
             }
+
           }, 1000)
           
        },
-       
        onClickB: onClick,
       })
     }
@@ -198,7 +207,8 @@ export default function AddData(props: IAddDataProps) : JSX.Element
         onClick3={(event:any)=> setModal2((prevState)=>{return {...prevState, show: false}})}
       />
       
-      <Form // initState={}
+      <Form
+        initState={props?.initialState}
         forms={props.forms}
         tittle={props.tittle}
         textSubmit={props.textSubmit}

@@ -1,15 +1,34 @@
-
+import { useLocation } from 'react-router-dom';
 import AddData from "../../components/add_data/add_data";
-
+import IProject from "../../../1_models/project";
 import ControllerProject from "../../../3_controllers/controller_project";
-import { Item, InputProps, SelectProps, RadioProps, CheckProps, Direction } from "../../components/form/form";
+import { Item, InputProps, ArrayInputProps, TextareaProps, Direction } from "../../components/form/form";
 
 export default function AddProjectsPage() : JSX.Element
 {
-  const forms: ( InputProps | SelectProps | RadioProps | CheckProps )[] = [
+  
+  const location = useLocation();
+  const _obj = location.state as IProject;
+    
+  const forms: ( InputProps | ArrayInputProps | TextareaProps )[] = [];
+  
+  if(_obj)
+    forms.push(
+    {
+      item : Item.input,
+      name: "Key",
+      reset: false,
+      value: _obj?.Key,
+      placeholder: "Key",
+      className: "Input_Key",
+    }
+  );
+  
+  forms.push(...[
     {
       item : Item.input,
       name: "Tittle",
+      reset: false,
       placeholder: "Tittle",
       className: "Input_Tittle",
     },
@@ -33,7 +52,7 @@ export default function AddProjectsPage() : JSX.Element
       placeholder: "Repository",
       className: "Input_Repositorys",
     },
-  ]
+  ]);
   
   const isFildsRequired = (state:any) => {
     return (!state?.Tittle || !state?.Description || !state.Tegnologys || !state.Repositorys );
@@ -45,7 +64,7 @@ export default function AddProjectsPage() : JSX.Element
       isFildsRequired={isFildsRequired}
       tittle="Add project"
       textSubmit="send"
-      post={ControllerProject.Post}
+      post={ _obj ? ControllerProject.Put : ControllerProject.Post }
     />
   )
 }

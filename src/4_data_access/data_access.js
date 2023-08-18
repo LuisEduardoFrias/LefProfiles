@@ -18,7 +18,7 @@ export default class daj {
     const pro = Reflect.get(data, `${obj.constructor.name}s`);
 
     if (pro === undefined) {
-      alert("no property")
+      
       if (!Reflect.set(obj, "Key", 1)) return false;
 
       return Reflect.set(data, `${obj.constructor.name}s`, obj);
