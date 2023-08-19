@@ -11,6 +11,7 @@
 }
 
 .proyect-constainer-experience {
+   background-color: black;
    border-radius: 10px 10px;
    display: flex;
    flex-direction: column;
@@ -22,7 +23,6 @@
    box-sizing: border-box;
    padding: 15px 10px 10px 10px;
    gap: 5px;
-   background-color: var(--S);
 }
 
 .proyect-tittle {
@@ -100,6 +100,7 @@
 }
 
 .proyect-repository {
+   color: white;
    font-size: 10px;
    font-weight: 700;
 }

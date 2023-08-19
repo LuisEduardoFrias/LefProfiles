@@ -186,54 +186,54 @@
       "Key": "1",
       "Tittle": "Técnico Superior en Desarrollo del Software",
       "Institution": "Instituto Técnico Superior Comunitario (ITSC)",
-      "TittleImg": "diploma.jpg",
+      "TittleImg": "diploma_ITSC.jpg",
       "MoreEducation": [
         {
           "Tittle": "Desarrollando Aplicaciones en Angular 10 y ASP.NET Core 5",
           "Institution": "udemy",
-          "UrlIstitution": "https://www.udemy.com/course/desarrollando-aplicaciones-en-angular-y-aspnet-core/",
+          "Url": "https://www.udemy.com/course/desarrollando-aplicaciones-en-angular-y-aspnet-core/",
           "TittleImg": ""
         },
         {
           "Tittle": "Entity Framework Core y SQL Server / MySQL",
           "Institution": "udemy",
-          "UrlIstitution": "https://www.udemy.com/course-dashboard-redirect/?course_id=3072640",
+          "Url": "https://www.udemy.com/course-dashboard-redirect/?course_id=3072640",
           "TittleImg": ""
         },
         {
           "Tittle": "Creación de API web Restful con ASP.NET Core 3.1",
           "Institution": "udemy",
-          "UrlIstitution": "https://www.udemy.com/course-dashboard-redirect/?course_id=2156664",
+          "Url": "https://www.udemy.com/course-dashboard-redirect/?course_id=2156664",
           "TittleImg": ""
         },
         {
           "Tittle": "Introducción a la concurrencia en C # - Async y Paralelismo",
           "Institution": "udemy",
-          "UrlIstitution": "https://www.udemy.com/course-dashboard-redirect/?course_id=3401576",
+          "Url": "https://www.udemy.com/course-dashboard-redirect/?course_id=3401576",
           "TittleImg": ""
         },
         {
           "Tittle": "Introducción a la inyección SQL",
           "Institution": "udemy",
-          "UrlIstitution": "https://www.udemy.com/course-dashboard-redirect/?course_id=2908130",
+          "Url": "https://www.udemy.com/course-dashboard-redirect/?course_id=2908130",
           "TittleImg": ""
         },
         {
           "Tittle": "Diseño y programación orientados a objetos en C #",
           "Institution": "udemy",
-          "UrlIstitution": "https://www.udemy.com/course-dashboard-redirect/?course_id=2442390",
+          "Url": "https://www.udemy.com/course-dashboard-redirect/?course_id=2442390",
           "TittleImg": ""
         },
         {
           "Tittle": "Desarrollando Aplicaciones en Angular 10 y ASP.NET Core 5",
           "Institution": "udemy",
-          "UrlIstitution": "https://www.udemy.com/course-dashboard-redirect/?course_id=3548864",
+          "Url": "https://www.udemy.com/course-dashboard-redirect/?course_id=3548864",
           "TittleImg": ""
         },
         {
           "Tittle": "React: De cero a experto (Hooks y MERN)",
           "Institution": "udemy",
-          "UrlIstitution": "https://www.udemy.com/course-dashboard-redirect/?course_id=3096364",
+          "Url": "https://www.udemy.com/course-dashboard-redirect/?course_id=3096364",
           "TittleImg": ""
         }
       ]
@@ -255,185 +255,5 @@
       "Name": "Ing. Julio Angel Florentino",
       "PhoneNumber": "829-854-7130"
     },
-    {
-      "Key": "11",
-      "Name": "Ing. José Manuel Tejeda",
-      "PhoneNumber": "809-436-7126"
-    },
-    {
-      "Key": "12",
-      "Name": "Lic. Jairo Esteban Lora Mejía",
-      "PhoneNumber": "829-983-1386"
-    },
-    {
-      "Key": "13",
-      "Name": "Ing. Julio Angel Florentino",
-      "PhoneNumber": "829-854-7130"
-    },
-    {
-      "Key": "21",
-      "Name": "Ing. José Manuel Tejeda",
-      "PhoneNumber": "809-436-7126"
-    },
-    {
-      "Key": "22",
-      "Name": "Lic. Jairo Esteban Lora Mejía",
-      "PhoneNumber": "829-983-1386"
-    },
-    {
-      "Key": "23",
-      "Name": "Ing. Julio Angel Florentino",
-      "PhoneNumber": "829-854-7130"
-    },
-    {
-      "Key": "31",
-      "Name": "Ing. José Manuel Tejeda",
-      "PhoneNumber": "809-436-7126"
-    },
-    {
-      "Key": "32",
-      "Name": "Lic. Jairo Esteban Lora Mejía",
-      "PhoneNumber": "829-983-1386"
-    },
-    {
-      "Key": "33",
-      "Name": "Ing. Julio Angel Florentino",
-      "PhoneNumber": "829-854-7130"
-    },
-    {
-      "Key": "41",
-      "Name": "Ing. José Manuel Tejeda",
-      "PhoneNumber": "809-436-7126"
-    },
-    {
-      "Key": "42",
-      "Name": "Lic. Jairo Esteban Lora Mejía",
-      "PhoneNumber": "829-983-1386"
-    },
-    {
-      "Key": "43",
-      "Name": "Ing. Julio Angel Florentino",
-      "PhoneNumber": "829-854-7130"
-    },
-    {
-      "Key": "51",
-      "Name": "Ing. José Manuel Tejeda",
-      "PhoneNumber": "809-436-7126"
-    },
-    {
-      "Key": "52",
-      "Name": "Lic. Jairo Esteban Lora Mejía",
-      "PhoneNumber": "829-983-1386"
-    },
-    {
-      "Key": "53",
-      "Name": "Ing. Julio Angel Florentino",
-      "PhoneNumber": "829-854-7130"
-    },
-    {
-      "Key": "61",
-      "Name": "Ing. José Manuel Tejeda",
-      "PhoneNumber": "809-436-7126"
-    },
-    {
-      "Key": "62",
-      "Name": "Lic. Jairo Esteban Lora Mejía",
-      "PhoneNumber": "829-983-1386"
-    },
-    {
-      "Key": "63",
-      "Name": "Ing. Julio Angel Florentino",
-      "PhoneNumber": "829-854-7130"
-    },
-    {
-      "Key": "71",
-      "Name": "Ing. José Manuel Tejeda",
-      "PhoneNumber": "809-436-7126"
-    },
-    {
-      "Key": "72",
-      "Name": "Lic. Jairo Esteban Lora Mejía",
-      "PhoneNumber": "829-983-1386"
-    },
-    {
-      "Key": "73",
-      "Name": "Ing. Julio Angel Florentino",
-      "PhoneNumber": "829-854-7130"
-    },
-    {
-      "Key": "81",
-      "Name": "Ing. José Manuel Tejeda",
-      "PhoneNumber": "809-436-7126"
-    },
-    {
-      "Key": "82",
-      "Name": "Lic. Jairo Esteban Lora Mejía",
-      "PhoneNumber": "829-983-1386"
-    },
-    {
-      "Key": "83",
-      "Name": "Ing. Julio Angel Florentino",
-      "PhoneNumber": "829-854-7130"
-    },
-    {
-      "Key": "91",
-      "Name": "Ing. José Manuel Tejeda",
-      "PhoneNumber": "809-436-7126"
-    },
-    {
-      "Key": "92",
-      "Name": "Lic. Jairo Esteban Lora Mejía",
-      "PhoneNumber": "829-983-1386"
-    },
-    {
-      "Key": "93",
-      "Name": "Ing. Julio Angel Florentino",
-      "PhoneNumber": "829-854-7130"
-    },
-    {
-      "Key": "101",
-      "Name": "Ing. José Manuel Tejeda",
-      "PhoneNumber": "809-436-7126"
-    },
-    {
-      "Key": "102",
-      "Name": "Lic. Jairo Esteban Lora Mejía",
-      "PhoneNumber": "829-983-1386"
-    },
-    {
-      "Key": "103",
-      "Name": "Ing. Julio Angel Florentino",
-      "PhoneNumber": "829-854-7130"
-    },
-    {
-      "Key": "111",
-      "Name": "Ing. José Manuel Tejeda",
-      "PhoneNumber": "809-436-7126"
-    },
-    {
-      "Key": "112",
-      "Name": "Lic. Jairo Esteban Lora Mejía",
-      "PhoneNumber": "829-983-1386"
-    },
-    {
-      "Key": "113",
-      "Name": "Ing. Julio Angel Florentino",
-      "PhoneNumber": "829-854-7130"
-    },
-    {
-      "Key": "121",
-      "Name": "Ing. José Manuel Tejeda",
-      "PhoneNumber": "809-436-7126"
-    },
-    {
-      "Key": "122",
-      "Name": "Lic. Jairo Esteban Lora Mejía",
-      "PhoneNumber": "829-983-1386"
-    },
-    {
-      "Key": "123",
-      "Name": "Ing. Julio Angel Florentino",
-      "PhoneNumber": "829-854-7130"
-    }
   ]
 }

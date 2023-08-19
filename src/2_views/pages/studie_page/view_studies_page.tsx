@@ -32,7 +32,6 @@ export default function ViewStudiesPage(props: IStudieProps) : JSX.Element
 {
     return (
     <>
-    
       <Header tittle="Studies" color="" />
       <OptionButton buttons={buttons} />
      

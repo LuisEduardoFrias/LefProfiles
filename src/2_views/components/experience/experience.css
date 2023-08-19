@@ -27,7 +27,7 @@
    box-sizing: border-box;
    padding: 5px 10px 10px 10px;
    gap: 5px;
-   background-color: var(--S);
+   background-color: black;
 }
 
 .experiences,
@@ -98,6 +98,7 @@
 .experience_tack {
    font-size: 10px;
    font-weight: 700;
+   color:white;
 }
 
 .experience_tack:before {

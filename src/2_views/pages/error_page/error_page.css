@@ -2,13 +2,21 @@
 #error-page {
   display: grid;
   grid-template-columns:1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-template-areas: "a-h1" "a-p1" "a-p2";
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 10px;
+  grid-template-areas: "a-h1" "a-h2" "a-p1" "a-p2";
+  padding: 20px 20px;
 }
 
-#h1 {
+h1 {
   grid-area: a-h1;
   font-size: 30px;
+  text-align: center;
+} 
+h2 {
+  grid-area: a-h2;
+  font-size: 25px;
+  text-align: center;
 }
 
 #p1 {
