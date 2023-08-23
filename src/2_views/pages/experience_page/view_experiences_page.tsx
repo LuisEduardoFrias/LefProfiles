@@ -37,7 +37,7 @@ export default function ViewExperiencesPage(props: IExperienceProps) : JSX.Eleme
       <OptionButton buttons={buttons} />
      
       <div className="container-page" >
-        { props.experiences.map(e => Experience(e)) }
+        { props.experiences.map((e,index) => Experience(e,index)) }
       </div>
     </>
     )

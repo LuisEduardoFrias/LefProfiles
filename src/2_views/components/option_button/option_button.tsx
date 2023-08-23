@@ -36,6 +36,7 @@ const StyleA : React.CSSProperties = {
   position: "relative",
   padding: "auto",
   userSelect: "none",
+  backdropFilter: "blur(5px)",
 }
 
 const StyleA_M : React.CSSProperties = {
@@ -46,6 +47,7 @@ const StyleA_M : React.CSSProperties = {
   alignItems: "center",
   position: "relative",
   userSelect: "none",
+  backdropFilterpppññ: "blur(5px)",
 }
 
 export default function OptionButton(props: IOptionProps) : JSX.Element {

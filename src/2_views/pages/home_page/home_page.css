@@ -1,0 +1,17 @@
+
+.container-about {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 20px;
+  box-sizing: border-box;
+}
+
+.tittle {
+  font-size: 30px;
+}
+
+.about {
+  font-size: 18px;
+  text-align: left;
+}

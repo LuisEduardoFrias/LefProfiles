@@ -96,7 +96,7 @@ const router = createBrowserRouter([
   },
 ]);
 
-// const api = new ApiC('http://localhost:8000');
+//const api = new ApiC('http://localhost:8000');
 
 export default function App() : JSX.Element {
   return (<RouterProvider router={router} />);

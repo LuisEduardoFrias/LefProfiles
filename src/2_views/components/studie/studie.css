@@ -4,43 +4,69 @@
 }
 
 .education-container_education {
-  
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .education-container-last-tittle {
-
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .education-tittle {
-  
+  font-size: 20px;
 }
 
 .education-institution {  
-
+  text-decoration-line: underline;
 }
 
 .education-img-tittle {  
-  
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
 }
 
 .education-container-sub-tittle {  
-  
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  box-sizing: border-box;
+  border: 1px solid silver;
+  padding: 5px;
+  border-radius: 10px 10px;
+  box-shadow: 0 0 3px 0 white, inset 0 0 3px 0 white;
+  height: 250px;
+  overflow-y: auto;
 }
 
 .education-container-sub-education {  
-  
+  border: 1px solid #0380f2;
+  box-shadow: inset 0 0 10px 0 #032cf2;
+  padding: 3px;
+  border-radius: 8px 8px;
 }
 
 .education-sub-tittle {  
-  
+  align-items: center;
+  font-size: 14px;
 }
 
 .education-contaiber-institution {  
- 
+  
 }
 
 .education-sub-institution-link {  
-  
+  color: white;
+  text-decoration-line: underline;
+}
+
+.education-sub-institution-link::after {
+  content: "\2190";
+  font-size: 30px;
 }
 
 .education-sub-institution {  
@@ -49,10 +75,4 @@
 
 .education-img-sub-tittle {  
   
-}
-
-img {
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
 }

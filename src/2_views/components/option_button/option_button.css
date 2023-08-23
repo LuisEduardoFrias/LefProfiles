@@ -34,3 +34,8 @@
   transform: scale(0.9);
   box-shadow: 2px 2px 1px 0px transparent;
 }
+
+.btn-link {
+  background-color: #006893;
+  box-shadow: -3px 9px 36px -6px black;
+}

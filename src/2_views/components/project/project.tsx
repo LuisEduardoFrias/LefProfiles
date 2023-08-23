@@ -2,9 +2,9 @@
 import IReferenece from "../../../1_models/project";
 import "./project.css";
 
-export default function Reference(project: IReferenece) {
+export default function Reference(project: IReferenece, index: number) {
   return (
-    <div className="proyect-constainer-experience" >
+    <div key={index} className="proyect-constainer-experience" >
       <label className="proyect-tittle" >{project.Tittle}</label>
       <label className="proyect-description" >{project.Description}</label>
       

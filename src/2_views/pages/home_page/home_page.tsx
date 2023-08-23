@@ -1,19 +1,20 @@
 
+import "./home_page.css";
+
 interface IHomeProps {
   
 }
 
 export default function HomePage(props:IHomeProps) :JSX.Element {
   return (
-  <div>
-    <label> Full stack .Net developer (Freelancer) </label>
-    <label> Software Engineer with 10+ years of experience developing web-based and mobile solutions involved in the whole software development life cycle. Currently focused on back-end development, working with robust architecture in agile teams, incorporating tools like C#, VB.Net, ASP.Net Core, Xamarin, Flutter, Node, SQL, WordPress, etc, with experience in leadership on personal and enterprise projects.
-
-Focused on delivering exceptional customer experiences and developing efficient and optimized code, following design patterns like Singleton, Factory, Repository, MVVM, CQRS, etc also experience consuming, building, and integrating, robust RESTful and SOAP APIs.
-
-Responsible, innovative, passionate, and committed professional with a get-it-done approach, my goal is to find places where I could work with multicultural teams. A picky of heart, perfectionist of soul, never losing the project scope. Flexibility to change/leverage any new technology focused on the best tool for solving a specific problem.
-
-Don't doubt to contact me if you have any questions to: me@sgermosen.com or +1 (849) 207 7714 </label>
+  <div className="container-about" >
+    <label className="tittle" >Full stack developer </label>
+    <p className="about" >Software Engineer with over 3+ years of experience in web and desktop-based solutions development, involved in the entire software development life cycle. Currently focused on backend development, working with a solid architecture in agile teams, incorporating tools such as C#, ASP.Net Core, React, React Native, Node, SQL, Oracle PL SQL, etc., with experience in personal and enterprise projects.</p>
     
+    <p className="about" >Focused on delivering exceptional customer experiences and developing efficient and optimized code, following design patterns like Singleton, Factory, Repository, MVC, and others based on it, etc. I also have experience in consuming, building, and integrating robust RESTful and SOAP APIs.</p>
+
+    <p className="about" >I am a responsible, innovative, passionate, and committed professional with a "get-it-done" approach. My goal is to find places where I can work with multicultural teams. Demanding at heart, perfectionist at soul, never losing sight of the project scope. I have the flexibility to adapt/leverage any new technology, focusing on the best tool to solve a specific problem.</p>
+
+    <p className="about" >Do not hesitate to contact me.</p>
   </div>)
 }

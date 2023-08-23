@@ -58,6 +58,7 @@ function IconData(props:IIconDataProps) : JSX.Element {
   return(
   <div style={IconDataStyles} >
     <Icon>{props.iconName}</Icon>
-    { props.link ? <a href={props.link}>{props.label}</a> : <label>{props.label}</label> }
+    { props.link ? <a style={{color:"white"}}  href={props.link}>{props.label}</a> : <label
+    style={{color:"white"}} >{props.label}</label> }
   </div>)
 }

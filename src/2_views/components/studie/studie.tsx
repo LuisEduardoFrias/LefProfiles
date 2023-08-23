@@ -1,5 +1,6 @@
 
 import IStudie from "../../../1_models/studie";
+import Img from "../img/img";
 import "./studie.css";
 
 export default function Studie(studie: IStudie) {
@@ -9,7 +10,7 @@ export default function Studie(studie: IStudie) {
       <div className="education-container-last-tittle" >
         <label className="education-tittle" >{studie.Tittle}</label>
         <label className="education-institution" >{studie.Institution}</label>
-        <img className="education-img-tittle" src={ studie.TittleImg.search("http") === -1 ? require(`../../../assert/${studie.TittleImg}`) : studie.TittleImg} alt="Imagen de titulo." />
+        <Img className="education-img-tittle" src={studie.TittleImg} alt="Imagen de titulo." />
       </div>
 
       <div className="education-container-sub-tittle" >
@@ -28,7 +29,7 @@ export default function Studie(studie: IStudie) {
             </div>
             
             {  e.TittleImg !== "" ? 
-              <img className="education-img-sub-tittle" src={e.TittleImg} alt="Imagen de titulo." /> :
+              <Img className="education-img-sub-tittle" src={e.TittleImg} alt="Imagen de titulo." /> :
               null
             }
           </div> )

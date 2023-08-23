@@ -36,7 +36,7 @@ export default function ViewReferencesPage(props: IReferenceProps) : JSX.Element
       <OptionButton buttons={buttons} />
 
       <div className="container-page" >
-        {props.references.map(e => Reference(e))}
+        {props.references.map((e,index) => Reference(e, index))}
       </div>
     </>
     )

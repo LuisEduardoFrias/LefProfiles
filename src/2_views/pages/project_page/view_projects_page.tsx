@@ -32,13 +32,11 @@ export default function ViewProjectsPage(props: IProjectProps) : JSX.Element
 {
     return (
     <>
-    
       <Header tittle="Projects" color="" />
-     <OptionButton buttons={buttons} />
-
+      <OptionButton buttons={buttons} />
      
       <div className="container-page" >
-        { props.projects.map(e => Project(e)) }
+        { props.projects.map((e,index) => Project(e,index)) }
       </div>
     </>
     )

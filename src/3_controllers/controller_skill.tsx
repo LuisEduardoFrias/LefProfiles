@@ -9,8 +9,6 @@ import {Skill} from "../1_models/skill";
 
 import daj from "../4_data_access/data_access.js";
 
-const GetImage=(name: string) :any =>{ return require(`../assert/${name}`) }
-
 export default class ControllerSkill {
 
  skills : Skill[];
