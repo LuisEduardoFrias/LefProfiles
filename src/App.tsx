@@ -14,7 +14,7 @@ import ControllerExperience from "./3_controllers/controller_experience";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "LefProfiles/",
     element: <RouterHome />,
     errorElement: <ErrorPage />,
     children: [
