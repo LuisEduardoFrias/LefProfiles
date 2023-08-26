@@ -12,9 +12,12 @@ import ControllerStudie from "./3_controllers/controller_studie";
 import ControllerProject from "./3_controllers/controller_project";
 import ControllerExperience from "./3_controllers/controller_experience";
 
-const router = createBrowserRouter([
+const basename = process.env.NODE_ENV === 'production' ? '/LefProfiles' : '/';
+
+const router = createBrowserRouter(
+ [
   {
-    path: "LefProfiles/",
+    path: "/",
     element: <RouterHome />,
     errorElement: <ErrorPage />,
     children: [
@@ -94,9 +97,9 @@ const router = createBrowserRouter([
       },
     ]
   },
-]);
-
-//const api = new ApiC('http://localhost:8000');
+ ]
+, { basename }
+);
 
 export default function App() : JSX.Element {
   return (<RouterProvider router={router} />);

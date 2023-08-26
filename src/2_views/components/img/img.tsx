@@ -12,13 +12,11 @@ export default function Img(img: IImgProps) {
   const [imageLoaded, setImageLoaded] = useState(false)
 
   useEffect(() => {
-    if(img.src.search("http") === -1) {
-      import(`../../../assets/${img.src}`)
-      .then((imageModule) => setImageUrl(imageModule.default))
-      .catch((error) => console.error(`Error loading image: ${error}`))
-    } else {
-      setImageUrl(img.src)
-    }
+   if (img.src.search("http") === -1) {
+     import(/* @vite-ignore */ `../../../assets/${img.src}`).then((imageModule) => setImageUrl(imageModule.default)).catch((error) => console.error(`Error loading image: ${error}`));
+   } else {
+    setImageUrl(img.src);
+   }
   }, [img.src])
 
   const handleImageLoad = () => {
