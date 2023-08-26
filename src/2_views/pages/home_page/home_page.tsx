@@ -5,7 +5,7 @@ interface IHomeProps {
   
 }
 
-export default function HomePage(props:IHomeProps) :JSX.Element {
+export default function HomePage(_:IHomeProps) :JSX.Element {
   return (
   <div className="container-about" >
     <label className="tittle" >Full stack developer </label>

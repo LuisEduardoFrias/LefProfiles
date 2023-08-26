@@ -56,7 +56,7 @@ const closeSubMenu = (classElement: string) : void => {
 
 function a(menuOp: IOption, subMenuList: string ) : JSX.Element {
     return (
-    <li className="menu-item li-item" onClick={event => closeSubMenu(subMenuList)} >
+    <li className="menu-item li-item" onClick={() => closeSubMenu(subMenuList)} >
       <a href={menuOp.href} className={ menuOp.icon ? "links" : "link-item" }>
         { menuOp.icon ? 
         <span className="menu-icon">
@@ -70,7 +70,7 @@ function a(menuOp: IOption, subMenuList: string ) : JSX.Element {
 
 function link(menuOp: IOption, subMenuList: string) : JSX.Element {
   return (
-  <li className="menu-item li-item" onClick={event => closeSubMenu(subMenuList)} >
+  <li className="menu-item li-item" onClick={_ => closeSubMenu(subMenuList)} >
     <Link to={menuOp.href} className={ menuOp.icon ? "links" : "link-item" }>
       { menuOp.icon ? 
       <span className="menu-icon">
@@ -94,7 +94,7 @@ function OptionSub(menuOp: IOption, index : Number) : JSX.Element {
   return( 
   <li className="menu-item" >
   
-    <div className="first-option-menu" onClick={event => openSubMenu(subMenuList)} >
+    <div className="first-option-menu" onClick={_ => openSubMenu(subMenuList)} >
     
       <div className="container-tittle-icon" >
       

@@ -1,6 +1,6 @@
 
 import "./input.css";
-import React, { ReactElement, MutableRefObject, useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { InputType } from "../form";
 
 enum Direction {

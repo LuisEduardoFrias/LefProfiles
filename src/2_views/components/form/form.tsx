@@ -1,5 +1,5 @@
 
-import React, { ReactElement, RefObject, useRef, useState, useEffect } from "react";
+import { ReactElement, useRef, useState } from "react";
 
 import LdDualRing from '../ld_dual_ring/ld_dual_ring';
 
@@ -11,7 +11,6 @@ import { ICheckProps } from './check/check';
 import { ITextareaProps } from './textarea/textarea';
 import { IArrayInputProps } from './array_input/array_input';
 
-import Input from './input/input';
 import "./form.css";
 
 export const enum Item {
@@ -27,11 +26,6 @@ export const enum Item {
 export enum Direction {
   row,
   column
-}
-
-interface IEraceElement {
-  element: InputProps | SelectProps | RadioProps | CheckProps;
-  className: string;
 }
 
 export enum InputType {

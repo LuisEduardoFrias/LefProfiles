@@ -35,7 +35,7 @@ export default function ViewData<T extends object>(props: IViewDataProps<T>) {
   
   const [dataSource, setDataSoure] = useState(props.dataSource);
   const [show, setShow] = useState(false);
-  const [itemsPerPage, setItemsPerPage] = useState(defaultRowsPerPage);
+  const [itemsPerPage] = useState(defaultRowsPerPage);
   const [currentPage, setCurrentPage] = useState(1);
   const [pagesNum, setPagesNum] = useState(1);
   const [paginatedData, setPaginatedData] = useState<T[]>([]);
@@ -123,7 +123,7 @@ export default function ViewData<T extends object>(props: IViewDataProps<T>) {
         type={ModalType.error}
         tittle={props.languaje === Languaje.es ? "Eliminar registro." : "Delete record." }
         dialog={props.languaje === Languaje.es ? "No se ha podido eliminar este registro." : "This record could not be deleted." }
-        onClick3={(event: any) => {}}/>
+        onClick3={(_: any) => {}}/>
         
       { dataSource.length !== 0 ?
       

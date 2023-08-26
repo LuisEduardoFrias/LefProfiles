@@ -3,9 +3,7 @@ import { useState } from "react";
 
 import BanckButton from "../back_button/back_button";
 import ModalWindow, { ModalType } from "../modal_window/modal_window";
-import Form, { Item, IState, InputProps, SelectProps, RadioProps, CheckProps, Direction} from "../form/form";
-
-import ControllerExperience from "../../../3_controllers/controller_experience";
+import Form, { InputProps, SelectProps, RadioProps, CheckProps } from "../form/form";
 
 import "./add_data.css";
 
@@ -41,77 +39,6 @@ type Modal = {
 export default function AddData(props: IAddDataProps) : JSX.Element
 {
   
-//    {
-//       item : Item.select,
-//       tittle: "clientes",
-//       name: "clientes",
-//       className: "select_cliente",
-//       options: [
-//         {
-//           value: "123",
-//           text: "cliente 1",
-//         },
-//         {
-//           value: "456",
-//           text: "cliente 2",
-//         },
-//         {
-//           value: "789",
-//           text: "cliente 3",
-//         },
-//       ]
-//     },
-//     {
-//       item : Item.radio,
-//       tittle: "Utencilio",
-//       name: "Utencilio",
-//       checked: "k3",
-//       className: "Radio_Utencilio",
-//       radios: [
-//         {
-//           value: "k1",
-//           text: "option1",
-//         },
-//         {
-//           value: "k2",
-//           text: "option2",
-//         },
-//         {
-//           value: "k3",
-//           text: "option3",
-//         },
-//         {
-//           value: "k4",
-//           text: "option4",
-//         },
-//       ]
-//     },
-//     {
-//       item : Item.check,
-//       tittle: "Utencilio",
-//       name: "Utencilio",
-//       className: "Radio_Utencilio",
-//       checks: [
-//         {
-//           value: "pn",
-//           text: "pan",
-//         },
-//         {
-//           value: "qs",
-//           text: "queso",
-//         },
-//         {
-//           value: "sm",
-//           text: "salami",
-//         },
-//         {
-//           value: "jt",
-//           text: "jamoneta",
-//         },
-//       ]
-//     }
-
-  
   const [modal, setModal] = useState<Modal>({
     show: false,
     type: ModalType.notification,
@@ -126,7 +53,7 @@ export default function AddData(props: IAddDataProps) : JSX.Element
     dialog: "",
   });
 
-  function onClick(event: any) {
+  function onClick(_: any) {
     setModal((prevState)=>{return {...prevState, show: false}});
   };
   
@@ -152,7 +79,7 @@ export default function AddData(props: IAddDataProps) : JSX.Element
        type: ModalType.warning,
        tittle: props.warningTittle ?? "Aviso",
        dialog: props.warningDialog ?? "Enviado corectamente.",
-       onClickA: (event:any) => 
+       onClickA: (_:any) => 
        {
           setState((prevState: any) => { return {...prevState, loader: true}});
           
@@ -204,7 +131,7 @@ export default function AddData(props: IAddDataProps) : JSX.Element
         type={modal2.type} 
         tittle={modal2.tittle} 
         dialog={modal2.dialog}
-        onClick3={(event:any)=> setModal2((prevState)=>{return {...prevState, show: false}})}
+        onClick3={(_:any)=> setModal2((prevState)=>{return {...prevState, show: false}})}
       />
       
       <Form

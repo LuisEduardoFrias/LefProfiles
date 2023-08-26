@@ -1,15 +1,15 @@
-import React, { RefObject, ReactElement, MutableRefObject } from "react";
+import React, { RefObject, ReactElement } from "react";
 
 // import SearchList from "../search_list/searchList";
-import Input, { IInputProps } from './input/input';
-import Select, { Option, ISelectProps } from './select/select';
-import Radio, { _Radio, IRadioProps } from './radio/radio';
-import Check, { _Check, ICheckProps } from './check/check';
-import Textarea, { ITextareaProps } from './textarea/textarea';
-import ArrayInput, { IArrayInputProps } from './array_input/array_input';
-import { Item, IState, InputProps, SelectProps, CheckProps, 
+import Input from './input/input';
+import Select from './select/select';
+import Radio, { _Radio } from './radio/radio';
+import Check, { _Check } from './check/check';
+import Textarea from './textarea/textarea';
+import ArrayInput from './array_input/array_input';
+import { Item, InputProps, SelectProps, CheckProps, 
 RadioProps, TextareaProps, ArrayInputProps } from './form';
-import ModalWindow, { ModalType } from "../modal_window/modal_window";
+import ModalWindow from "../modal_window/modal_window";
 
 export interface IInitialState {
   name: string;

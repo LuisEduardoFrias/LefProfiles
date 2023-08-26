@@ -1,5 +1,4 @@
 
-import { MouseEventHandler } from 'react';
 import Icon from '@mui/material/Icon';
 import './modal_window.css';
 

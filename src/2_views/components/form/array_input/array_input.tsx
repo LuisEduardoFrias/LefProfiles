@@ -41,7 +41,7 @@ export default function Input(props: IArrayInputProps) {
     });
   };
   
-  const addInput = (event: any) => {
+  const addInput = (_: any) => {
     setState((prevState:any) => { return [...prevState, ""]; });
   }
   
@@ -59,7 +59,7 @@ export default function Input(props: IArrayInputProps) {
       </button>
       
       <div className="inputs-arrayinput">
-        {state.map((text, index) => 
+        {state.map((_, index) => 
           <div className="unitinput-arrayinput">
             <input
               data-key={index}
@@ -73,7 +73,7 @@ export default function Input(props: IArrayInputProps) {
             
             { index >= 1 ? 
               <button className="button-arrayinput" type="button"
-              onClick={(event:any) => remodeInput(index)}>
+              onClick={(_:any) => remodeInput(index)}>
                 <Icon>remove</Icon>
               </button> : null
             }

@@ -47,7 +47,7 @@ const StyleA_M : React.CSSProperties = {
   alignItems: "center",
   position: "relative",
   userSelect: "none",
-  backdropFilterpppññ: "blur(5px)",
+  backdropFilter: "blur(5px)",
 }
 
 export default function OptionButton(props: IOptionProps) : JSX.Element {

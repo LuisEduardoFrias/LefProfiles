@@ -1,10 +1,6 @@
 import IStudie from "../../../1_models/studie"
 import BanckButton from "../../components/back_button/back_button";
 
-interface IStudieProps {
-  studies: IStudie[]
-}
-
 export default function AddStudiesPage() : JSX.Element
 {
     return (

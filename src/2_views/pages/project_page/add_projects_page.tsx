@@ -2,7 +2,7 @@ import { useLocation } from 'react-router-dom';
 import AddData from "../../components/add_data/add_data";
 import IProject from "../../../1_models/project";
 import ControllerProject from "../../../3_controllers/controller_project";
-import { Item, InputProps, ArrayInputProps, TextareaProps, Direction } from "../../components/form/form";
+import { Item, InputProps, ArrayInputProps, TextareaProps } from "../../components/form/form";
 
 export default function AddProjectsPage() : JSX.Element
 {
