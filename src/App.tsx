@@ -12,7 +12,9 @@ import ControllerStudie from "./3_controllers/controller_studie";
 import ControllerProject from "./3_controllers/controller_project";
 import ControllerExperience from "./3_controllers/controller_experience";
 
-const basename = process.env.NODE_ENV === 'production' ? '/LefProfiles' : '/';
+//const basename = process.env.NODE_ENV === 'production' ? '/LefProfiles' : '/';
+
+const basename = '/LefProfiles';
 
 const router = createBrowserRouter(
  [

@@ -20,13 +20,11 @@
   }
   
   header {
-   background-color: blue;
     grid-area: header;
   }
   
   main {
     grid-area: main;
-    background-color: red;
     height: 100%;
     width: 100%
     display: flex;
@@ -56,13 +54,11 @@
   }
   
   header {
-   background-color: blue;
     grid-area: header;
   }
   
   main {
     grid-area: main;
-    background-color: red;
     display: grid;
     height: 450px;
   }}
