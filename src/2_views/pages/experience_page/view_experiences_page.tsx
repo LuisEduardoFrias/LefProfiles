@@ -3,8 +3,9 @@ import Experience from "../../components/experience/experience";
 import Header from "../../components/header/header";
 import OptionButton from "../../components/option_button/option_button";
 
-import IExperience from "../../../1_models/experience"
-import "./view_experience_page.css"
+import IExperience from "../../../1_models/experience";
+import "./view_experience_page.css";
+import "../view_page.css";
 
 interface IExperienceProps {
   experiences: IExperience[]
@@ -32,7 +33,6 @@ export default function ViewExperiencesPage(props: IExperienceProps) : JSX.Eleme
 {
     return (
     <>
-    
       <Header tittle="Experieneces" color="" />
       <OptionButton buttons={buttons} />
      

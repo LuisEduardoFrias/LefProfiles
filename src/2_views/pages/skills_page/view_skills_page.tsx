@@ -5,6 +5,7 @@ import OptionButton from "../../components/option_button/option_button";
 
 import ISkill from "../../../1_models/skill"
 import "./view_skills_page.css"
+import "../view_page.css";
 
 interface ISkillProps {
   skills: ISkill[]

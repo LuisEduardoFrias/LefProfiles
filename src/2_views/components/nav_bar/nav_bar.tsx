@@ -19,7 +19,8 @@ export default function NavBar(props: INavBarProps) : JSX.Element {
   return (<>
     <nav className="contontainer-menu">
       <ul className="first-list">
-        { props.menus.map((e: IOption, i: Number) : JSX.Element => e.sub.length !== 0 ? OptionSub(e, i) : Option(e, `option-${i}`) )}
+        { props.menus.map((e: IOption, i: number) : JSX.Element => e.sub.length
+        !== 0 ? OptionSub(e, i) : Option(e, `option-${i}`, i) )}
       </ul>
     </nav>
     </>
@@ -54,9 +55,9 @@ const closeSubMenu = (classElement: string) : void => {
 
 //----------------------------------
 
-function a(menuOp: IOption, subMenuList: string ) : JSX.Element {
+function a(menuOp: IOption, subMenuList: string, i: number ) : JSX.Element {
     return (
-    <li className="menu-item li-item" onClick={() => closeSubMenu(subMenuList)} >
+    <li key={i} className="menu-item li-item" onClick={() => closeSubMenu(subMenuList)} >
       <a href={menuOp.href} className={ menuOp.icon ? "links" : "link-item" }>
         { menuOp.icon ? 
         <span className="menu-icon">
@@ -68,9 +69,9 @@ function a(menuOp: IOption, subMenuList: string ) : JSX.Element {
     </li>)
 }
 
-function link(menuOp: IOption, subMenuList: string) : JSX.Element {
+function link(menuOp: IOption, subMenuList: string, i: number) : JSX.Element {
   return (
-  <li className="menu-item li-item" onClick={_ => closeSubMenu(subMenuList)} >
+  <li key={i} className="menu-item li-item" onClick={_ => closeSubMenu(subMenuList)} >
     <Link to={menuOp.href} className={ menuOp.icon ? "links" : "link-item" }>
       { menuOp.icon ? 
       <span className="menu-icon">
@@ -82,17 +83,17 @@ function link(menuOp: IOption, subMenuList: string) : JSX.Element {
   </li>)
 }
 
-function Option(menuOp: IOption, subMenuList: string) : JSX.Element {
-  return menuOp.isLoad ? a(menuOp, subMenuList) : link(menuOp, subMenuList);
+function Option(menuOp: IOption, subMenuList: string, i: number) : JSX.Element {
+  return menuOp.isLoad ? a(menuOp, subMenuList, i) : link(menuOp, subMenuList, i);
 }
 
-function OptionSub(menuOp: IOption, index : Number) : JSX.Element {
+function OptionSub(menuOp: IOption, index : number) : JSX.Element {
 
  const subMenuList: string = 
     `sub-menu-${menuOp.name}-${index}`.replace(/\s+/g, '')  
  
   return( 
-  <li className="menu-item" >
+  <li key={index} className="menu-item" >
   
     <div className="first-option-menu" onClick={_ => openSubMenu(subMenuList)} >
     
@@ -114,8 +115,8 @@ function OptionSub(menuOp: IOption, index : Number) : JSX.Element {
     <div style={{display:"none"}} id={subMenuList} className="sub-menu-list slide-rotate-ver-left">
     
       <ul className="secondari-list" >
-        { menuOp.sub?.map( (ele: IOption, i: Number) : JSX.Element =>
-        ele.sub.length !== 0 ? OptionSub(ele, i) : Option(ele, subMenuList) )}
+        { menuOp.sub?.map( (ele: IOption, i: number) : JSX.Element =>
+        ele.sub.length !== 0 ? OptionSub(ele, i) : Option(ele, subMenuList, i) )}
       </ul>
       
       <hr />

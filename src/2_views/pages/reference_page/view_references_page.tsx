@@ -5,6 +5,7 @@ import OptionButton from "../../components/option_button/option_button";
 
 import IReference from "../../../1_models/reference"
 import "./view_reference_page.css"
+import "../view_page.css";
 
 interface IReferenceProps {
   references: IReference[]

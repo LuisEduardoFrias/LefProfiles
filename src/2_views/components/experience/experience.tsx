@@ -11,8 +11,8 @@ export default function Experience(experience: IExperience, index: number) {
       
       <fieldset className="experience-container-tacks" >
       <legend className="experience-tittle-group-tacks" >Tacks</legend>
-        { experience.Tacks.map(e => 
-        <label className="experience_tack" >{e}</label>) }
+        { experience.Tacks.map((e,index_ ) => 
+        <label key={index_} className="experience_tack" >{e}</label>) }
       </fieldset>
       
     </div>

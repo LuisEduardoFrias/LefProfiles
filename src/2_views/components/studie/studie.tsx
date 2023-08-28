@@ -4,7 +4,7 @@ import Img from "../img/img";
 import "./studie.css";
 
 export default function Studie(studie: IStudie) {
-  console.log(JSON.stringify(studie))
+  
   return (
     <div className="education-container_education" >
       <div className="education-container-last-tittle" >

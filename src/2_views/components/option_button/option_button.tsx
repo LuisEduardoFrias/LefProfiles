@@ -53,8 +53,8 @@ const StyleA_M : React.CSSProperties = {
 export default function OptionButton(props: IOptionProps) : JSX.Element {
   return(
     <ul className="container-option-button" >
-      { props.buttons.map(e => e.IsLoad ?
-      ( <li className="btn-link" > 
+      { props.buttons.map((e, index) => e.IsLoad ?
+      ( <li key={index} className="btn-link" > 
           <Box>
             <a href={e.Href}  >
               { e.Icon && <Icon>{e.Icon}</Icon> } 
@@ -62,7 +62,7 @@ export default function OptionButton(props: IOptionProps) : JSX.Element {
             </a>
           </Box>
         </li>) : 
-      ( <li className="btn-link" >
+      ( <li key={index} className="btn-link" >
           { e?.Name ?
             <StyledLinkM to={e.Href} >
               { e.Icon && <Icon>{e.Icon}</Icon> } 

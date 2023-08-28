@@ -37,10 +37,9 @@ const LabelStyle : React.CSSProperties = {
 
 export default function Porcentage(props: IPorcentageProps) {
   return (
-  <div style={props.direction === "column" ? PorcentageColumnStyle :
-     PorcentageRowStyle} >
+  <div key={props.key} style={props.direction === "column" ? PorcentageColumnStyle : PorcentageRowStyle} >
     {props.tittle ? <label style={LabelStyle} >{props.tittle}</label> : null }
-    <input key={props.key} type="range" style={{backgroundSize: `${props.value}% 100%` }}  className="porcentage" />
+    <input type="range" style={{backgroundSize: `${props.value}% 100%` }}  className="porcentage" />
     <label className="label-porcentage">{props.value}%</label>
   </div>)
 }

@@ -56,9 +56,6 @@ export default function RouterHome() : JSX.Element {
       <header>
         <Profile />
       </header>
-      <nav>
-
-      </nav>
       <main>
         <NavBar menus={menus} />
         <Outlet />

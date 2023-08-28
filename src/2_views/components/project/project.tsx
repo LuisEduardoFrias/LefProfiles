@@ -10,14 +10,14 @@ export default function Reference(project: IReferenece, index: number) {
       
       <fieldset className="proyect-container-tegnology" >
       <legend className="proyect-tittle-group-tacks" >Tegnologys</legend>
-        { project.Tegnologys.map(e => 
-        <label className="proyect-tenology" >{e}</label>) }
+        { project.Tegnologys.map((e, index_) => 
+        <label key={index_} className="proyect-tenology" >{e}</label>) }
       </fieldset>
       
       <fieldset className="proyect-container-repository">
       <legend>Repositorys</legend>
-        { project.Repositorys.map(e => 
-        <a className="proyect-repository" href={e} >{e}</a>) }
+        { project.Repositorys.map((e, index_) => 
+        <a key={index_} className="proyect-repository" href={e} >{e}</a>) }
       </fieldset>
       
     </div>

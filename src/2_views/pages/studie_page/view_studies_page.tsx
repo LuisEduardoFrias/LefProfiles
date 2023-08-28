@@ -5,6 +5,7 @@ import OptionButton from "../../components/option_button/option_button";
 
 import IStudie from "../../../1_models/studie"
 import "./view_studie_page.css"
+import "../view_page.css";
 
 interface IStudieProps {
   studies: IStudie[]

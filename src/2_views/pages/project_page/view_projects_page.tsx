@@ -5,6 +5,7 @@ import OptionButton from "../../components/option_button/option_button";
 
 import IProject from "../../../1_models/project"
 import "./view_project_page.css"
+import "../view_page.css";
 
 interface IProjectProps {
   projects: IProject[]
