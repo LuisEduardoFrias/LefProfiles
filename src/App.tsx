@@ -99,8 +99,8 @@ const router = createBrowserRouter(
       },
     ]
   },
- ]
-, { basename }
+ ], 
+ { basename }
 );
 
 export default function App() : JSX.Element {

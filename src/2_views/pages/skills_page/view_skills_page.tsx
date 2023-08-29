@@ -48,7 +48,7 @@ export default function ViewSkillsPage(props: ISkillProps) : JSX.Element
         <label>Levers</label>
         
         <div className="container-range" >
-          {props.skills.map((e, index) => <Porcentage key={index} value={e.Experience} direction="row" tittle={e.Name} />)}
+          {props.skills.map((e, index) => <Porcentage index={index} value={e.Experience} direction="row" tittle={e.Name} />)}
         </div>
         
       </div>

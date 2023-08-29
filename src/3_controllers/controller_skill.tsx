@@ -15,10 +15,10 @@ export default class ControllerSkill {
  
   constructor() {
     this.skills = [];
-    this.skills = daj.get(new Skill("","","",0)) ?? [];
  }
  
   Views() : JSX.Element {
+    this.skills = daj.get(new Skill("","","",0));
     return <ViewSkillsPage skills={this.skills} />
   }
   
@@ -27,6 +27,7 @@ export default class ControllerSkill {
   }
   
   List() : JSX.Element {
+    this.skills = daj.get(new Skill("","","",0));
     return <ListSkillsPage skills={this.skills} />
   }
   

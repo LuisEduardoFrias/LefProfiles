@@ -19,7 +19,6 @@ export default class ControllerExperience {
   }
  
   Views() : JSX.Element {
-  	console.log("verificando experience")
     return <ViewExperiencesPage experiences={this.experience} />
   }
   

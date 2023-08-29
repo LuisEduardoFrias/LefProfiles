@@ -3,39 +3,58 @@
 
 export default class daj {
   
+  static createDataStorage() {
+	localStorage.setItem("data", JSON.stringify(_data));
+  }
+  
+  static getStorage() {
+  	console.log("get storage")
+  	if(!localStorage.getItem("data")) {
+  		this.createDataStorage();
+  	}
+  	return JSON.parse(localStorage.getItem("data"));
+  }
+  
+  static setStorage(jsonString) {
+  	localStorage.setItem("data", JSON.stringify(jsonString));
+  }
   //
   // get
   //
   static get(obj) {
-    return Reflect.get(data, `${obj.constructor.name}s`);
+    return Reflect.get(this.getStorage(), `${obj.constructor.name}s`);
   }
   
   //
   // post
   //
   static post(obj) {
-   
+    const data = this.getStorage();
     const pro = Reflect.get(data, `${obj.constructor.name}s`);
 
     if (pro === undefined) {
       
       if (!Reflect.set(obj, "Key", 1)) return false;
 
-      return Reflect.set(data, `${obj.constructor.name}s`, obj);
+      Reflect.set(data, `${obj.constructor.name}s`, obj);
+      this.setStorage(data);
+      return true;
     }
  
     if (!Reflect.set(obj, "Key", pro.length + 1)) return false;
  
     pro.push(obj);
     
-    return Reflect.set(data, `${obj.constructor.name}s`, pro);
+    Reflect.set(data, `${obj.constructor.name}s`, pro);
+    this.setStorage(data);
+    return true;
   }
   
   //
   // put
   //
   static put(obj) {
-    
+    const data = this.getStorage();
     let newPro = [...Reflect.get(data, `${obj.constructor.name}s`)];
     
     const index = newPro.findIndex((e) => e.Key === obj.Key);
@@ -46,14 +65,15 @@ export default class daj {
     };
 
     Reflect.set(data, `${obj.constructor.name}s`, newPro);
-    
-    return true
+    this.setStorage(data);
+    return true;
   }
   
   //
   // delete
   //
   static delete(obj, Key) {
+    const data = this.getStorage();
     const pro = Reflect.get(data, `${obj.constructor.name}s`);
 
     if (pro === undefined) return false;
@@ -66,11 +86,13 @@ export default class daj {
       return false;
     }
     
-    return Reflect.set(data, `${obj.constructor.name}s`, pro);
+    Reflect.set(data, `${obj.constructor.name}s`, pro);
+    this.setStorage(data);
+    return true;
   }
 }
 
-const data = JSON.parse(`{
+const _data = JSON.parse(`{
   "Skills": [
    { 
       "Key": "1", 

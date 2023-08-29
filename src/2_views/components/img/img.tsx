@@ -8,14 +8,16 @@ interface IImgProps {
 
 export default function Img(img: IImgProps) {
   
-  const [imageUrl, setImageUrl] = useState("")
-  const [imageLoaded, setImageLoaded] = useState(false)
-
+  const [imageUrl, setImageUrl] = useState("");
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const public_assets =  `/assets/`; 
+  //`${process.env.PUBLIC_URL}/assets/`;
+  
   useEffect(() => {
    if (img.src.search("http") === -1) {
-     import(/* @vite-ignore */ `../../../assets/${img.src}`).then((imageModule) => setImageUrl(imageModule.default)).catch((error) => console.error(`Error loading image: ${error}`));
+     import(/* @vite-ignore */ `${public_assets}${img.src}`).then((imageModule) => setImageUrl(imageModule.default)).catch((error) => console.error(`Error loading image: ${error}`));
    } else {
-    setImageUrl(img.src);
+     setImageUrl(img.src);
    }
   }, [img.src])
 
