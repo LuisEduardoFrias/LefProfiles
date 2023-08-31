@@ -11,6 +11,7 @@ interface IExperienceProps {
 export default function ListExperiencesPage(props: IExperienceProps) : JSX.Element
 {
     return (
+        <div className="container-page" >
       <div style={{padding:"15px 15px"}}>
         <ViewData
         tableName={"Experiences"}
@@ -22,6 +23,7 @@ export default function ListExperiencesPage(props: IExperienceProps) : JSX.Eleme
         >
           <BanckButton icon="arrow_back" />
         </ViewData>
+      </div>
       </div>
     )
 }

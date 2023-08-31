@@ -1,7 +1,10 @@
 
+import { lazy, Suspense } from "react";
+const LdDualRing = lazy(()=> import("../../components/ld_dual_ring/ld_dual_ring"));
+const BanckButton = lazy(()=> import("../../components/back_button/back_button"));
+const ViewData = lazy(()=> import("../../components/view_data/view_data"));
+
 import IStudie from "../../../1_models/studie"
-import BanckButton from "../../components/back_button/back_button";
-import ViewData from "../../components/view_data/view_data";
 import ControllerStudie from "../../../3_controllers/controller_studie";
 
 interface IStudieProps {
@@ -11,6 +14,8 @@ interface IStudieProps {
 export default function ListStudiesPage(props: IStudieProps) : JSX.Element
 {
     return (
+    <div className="container-page" >
+    <Suspense fallback={<LdDualRing error={false} />} >
       <div style={{padding:"15px 15px"}}>
         <ViewData
         tableName={"Studies"}
@@ -23,5 +28,7 @@ export default function ListStudiesPage(props: IStudieProps) : JSX.Element
           <BanckButton icon="arrow_back" />
         </ViewData>
       </div>
+    </Suspense>
+    </div>
     )
 }

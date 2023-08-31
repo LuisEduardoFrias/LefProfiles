@@ -11,6 +11,7 @@ interface IReferenceProps {
 export default function ListReferencesPage(props: IReferenceProps) : JSX.Element
 {
     return (
+      <div className="container-page" >
       <div style={{padding:"15px 15px"}}>
         <ViewData
         tableName={"Referencias"}
@@ -23,6 +24,7 @@ export default function ListReferencesPage(props: IReferenceProps) : JSX.Element
         >
           <BanckButton icon="arrow_back" />
         </ViewData>
+      </div>
       </div>
     )
 }

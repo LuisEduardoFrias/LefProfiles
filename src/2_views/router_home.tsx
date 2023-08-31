@@ -1,10 +1,14 @@
-import { Outlet } from "react-router-dom";
-import Profile from "./components/profile/profile";
-import NavBar, { IOption } from "./components/nav_bar/nav_bar";
+import { lazy, Suspense } from "react";
+
+const Outlet = lazy(()=> import("react-router-dom").then(module => ({ default: module.Outlet})));
+const Profile = lazy(()=> import("./components/profile/profile"));
+const NavBar = lazy(() => import('./components/nav_bar/nav_bar'));
+import { IOption } from './components/nav_bar/nav_bar';
+const LdDualRing = lazy(()=> import("./components/ld_dual_ring/ld_dual_ring"));
 
 import "./router_home.css"
 
-const menus : IOption[] = [
+let menus : IOption[] = [
   {
     name:"Home",
     icon:"home",
@@ -54,11 +58,15 @@ export default function RouterHome() : JSX.Element {
   return (
     <div className="layout">
       <header>
-        <Profile />
+        <Suspense fallback={<LdDualRing error={false} />} >
+          <Profile />
+        </Suspense >
       </header>
       <main>
-        <NavBar menus={menus} />
-        <Outlet />
+        <Suspense fallback={<LdDualRing error={false} />} >
+          <NavBar menus={menus} />
+          <Outlet />
+        </Suspense >
       </main>
     </div>
   );

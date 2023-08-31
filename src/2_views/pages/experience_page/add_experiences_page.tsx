@@ -58,6 +58,7 @@ export default function AddExperiencePage() : JSX.Element
   }
   
   return ( 
+        <div className="container-page" >
     <AddData 
       forms={forms}
       isFildsRequired={isFildsRequired}
@@ -65,5 +66,6 @@ export default function AddExperiencePage() : JSX.Element
       textSubmit="send"
       post={ _obj ? ControllerExperience.Put : ControllerExperience.Post }
     />
+    </div>
   )
 }

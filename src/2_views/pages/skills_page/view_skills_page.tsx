@@ -1,7 +1,11 @@
-import Skill from "../../components/skill/skill";
-import Porcentage from "../../components/porcentage/porcentage";
-import Header from "../../components/header/header";
-import OptionButton from "../../components/option_button/option_button";
+
+import { lazy, Suspense } from "react";
+const LdDualRing = lazy(()=> import("../../components/ld_dual_ring/ld_dual_ring"));
+
+const Skill = lazy(()=> import("../../components/skill/skill"));
+const Porcentage = lazy(()=> import( "../../components/porcentage/porcentage"));
+const Header = lazy(()=> import("../../components/header/header"));
+const OptionButton = lazy(()=> import("../../components/option_button/option_button"));
 
 import ISkill from "../../../1_models/skill"
 import "./view_skills_page.css"
@@ -32,26 +36,30 @@ const buttons = [
 export default function ViewSkillsPage(props: ISkillProps) : JSX.Element
 {
     return (
-    <>
-    
-      <Header tittle="Skills" color="" />
-      <OptionButton buttons={buttons} />
-
-     
-      <div className="container-page" >
+    	<>
+        <Suspense fallback={<LdDualRing error={false} />} >
+          <Header tittle="Skills" color="" />
+          <OptionButton buttons={buttons} />
+        </Suspense>
+        
+        <div className="container-page" >
       
-        <div className="container-card" >
-          {props.skills.map((e,index) => Skill(e, index))}
+          <div className="container-card" >
+            <Suspense fallback={<LdDualRing error={false} />} >
+              {props.skills.map(e => <Skill Key={e.Key} Name={e.Name}
+              UrlImage={e.UrlImage} Experience={e.Experience} />)}
+            </Suspense>
+          </div>
+        
+          <br />
+          <label>Levers</label>
+         
+          <div className="container-range" >
+            <Suspense fallback={<LdDualRing error={false} />} >
+              {props.skills?.map((e) => <Porcentage index={Number(e.Key)} value={e.Experience} direction="row" tittle={e.Name} />)}
+            </Suspense>
+          </div>
         </div>
-        
-        <br />
-        <label>Levers</label>
-        
-        <div className="container-range" >
-          {props.skills.map((e, index) => <Porcentage index={index} value={e.Experience} direction="row" tittle={e.Name} />)}
-        </div>
-        
-      </div>
-    </>
+      </>
     )
 }

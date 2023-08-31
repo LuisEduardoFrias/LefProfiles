@@ -1,4 +1,8 @@
-import Project from "../../components/project/project";
+
+import { lazy, Suspense } from "react";
+const LdDualRing = lazy(()=> import("../../components/ld_dual_ring/ld_dual_ring"));
+
+const Project = lazy(()=> import("../../components/project/project"));
 
 import Header from "../../components/header/header";
 import OptionButton from "../../components/option_button/option_button";
@@ -37,7 +41,9 @@ export default function ViewProjectsPage(props: IProjectProps) : JSX.Element
       <OptionButton buttons={buttons} />
      
       <div className="container-page" >
-        { props.projects.map((e,index) => Project(e,index)) }
+        <Suspense fallback={<LdDualRing error={false} />} >
+          { props.projects.map(e => <Project Key={e.Key} Tittle={e.Tittle} Description={e.Description} Tegnologys={e.Tegnologys} Repositorys={e.Repositorys} />) }
+        </Suspense>
       </div>
     </>
     )

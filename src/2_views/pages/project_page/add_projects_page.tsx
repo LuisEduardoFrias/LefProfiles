@@ -59,6 +59,7 @@ export default function AddProjectsPage() : JSX.Element
   }
   
   return ( 
+        <div className="container-page" >
     <AddData 
       forms={forms}
       isFildsRequired={isFildsRequired}
@@ -66,5 +67,6 @@ export default function AddProjectsPage() : JSX.Element
       textSubmit="send"
       post={ _obj ? ControllerProject.Put : ControllerProject.Post }
     />
+    </div>
   )
 }

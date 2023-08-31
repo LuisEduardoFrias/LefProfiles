@@ -14,7 +14,6 @@ export default function Studie(studie: IStudie) {
       </div>
 
       <div className="education-container-sub-tittle" >
-        <>
         {studie.MoreEducation.map((e, index) => 
           <div key={index} className="education-container-sub-education">
             <label className="education-sub-tittle" >{e.Tittle}</label>
@@ -34,7 +33,6 @@ export default function Studie(studie: IStudie) {
             }
           </div> )
         }
-        </>
       </div>
     </div> )
 }

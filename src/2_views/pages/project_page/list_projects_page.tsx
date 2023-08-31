@@ -11,6 +11,7 @@ interface IProjectProps {
 export default function ListProjectPage(props: IProjectProps) : JSX.Element
 {
     return (
+        <div className="container-page" >
       <div style={{padding:"15px 15px"}}>
         <ViewData
         tableName={"Projects"}
@@ -22,6 +23,7 @@ export default function ListProjectPage(props: IProjectProps) : JSX.Element
         >
           <BanckButton icon="arrow_back" />
         </ViewData>
+      </div>
       </div>
     )
 }

@@ -1,4 +1,7 @@
 
+import { lazy, Suspense } from "react";
+const LdDualRing = lazy(()=> import("../../components/ld_dual_ring/ld_dual_ring"));
+
 import AddData from "../../components/add_data/add_data";
 import { useLocation } from 'react-router-dom';
 import ISkill from "../../../1_models/skill";
@@ -59,13 +62,17 @@ export default function AddSkillsPage() : JSX.Element
   }
   
   return ( 
-    <AddData 
+    <div className="container-page" >
+      <Suspense fallback={<LdDualRing error={false} />} >
+      <AddData 
       forms={forms}
       initialState={_obj}
       isFildsRequired={isFildsRequired}
       tittle="Add Skill"
       textSubmit="send"
       post={ _obj ? ControllerSkill.Put : ControllerSkill.Post }
-    />
+      />
+      </Suspense>
+    </div>
   )
 }

@@ -23,7 +23,7 @@
   backdrop-filter: blur(5px);
   margin: auto;
   padding: 10px 10px;
-  width: 90%;
+  max-width: 330px;
   height: 250px;
   animation-name: animarsuperior;
   animation-duration: 0.5s

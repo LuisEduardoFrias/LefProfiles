@@ -1,4 +1,8 @@
-import Experience from "../../components/experience/experience";
+
+import { lazy, Suspense } from "react";
+const LdDualRing = lazy(()=> import("../../components/ld_dual_ring/ld_dual_ring"));
+
+const Experience = lazy(()=> import("../../components/experience/experience"));
 
 import Header from "../../components/header/header";
 import OptionButton from "../../components/option_button/option_button";
@@ -37,7 +41,11 @@ export default function ViewExperiencesPage(props: IExperienceProps) : JSX.Eleme
       <OptionButton buttons={buttons} />
      
       <div className="container-page" >
-        { props.experiences.map((e,index) => Experience(e,index)) }
+        <Suspense fallback={<LdDualRing error={false} />} >
+          { props.experiences.map(e => <Experience Key={e.Key}
+          Company={e.Company} Description={e.Description} Position={e.Position} Tacks={e.Tacks}
+          /> )}
+        </Suspense>
       </div>
     </>
     )
