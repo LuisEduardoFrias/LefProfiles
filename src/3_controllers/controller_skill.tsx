@@ -14,6 +14,8 @@ export default class ControllerSkill {
  skills : Skill[];
  
   constructor() {
+    const ndaj = new dajt();
+
     this.skills = [];
     this.skills = daj.get(new Skill("","","",0)) ?? [];
  }
