@@ -16,6 +16,22 @@ import ControllerExperience from "./3_controllers/controller_experience";
 
 const basename = '/LefProfiles';
 
+const SkillView = () :JSX.Element => {           
+  const controllerSkill = new ControllerSkill();
+  controllerSkill.componentDidMount();
+  return(controllerSkill.Views());
+};
+const SkillList = () :JSX.Element => {           
+  const controllerSkill = new ControllerSkill();
+  controllerSkill.componentDidMount();
+  return controllerSkill.List();
+};
+const SkillAdd = () :JSX.Element => {           
+  const controllerSkill = new ControllerSkill();
+  controllerSkill.componentDidMount();
+  return controllerSkill.Add();
+};
+
 const router = createBrowserRouter(
  [
   {
@@ -31,77 +47,126 @@ const router = createBrowserRouter(
       ////////////// skill
      {
         path: "/skill/view",
-        element: new ControllerSkill().Views(),
+        element: <SkillView />,
       },
      {
         path: "/skill/add",
-        element: new ControllerSkill().Add(),
+        element: <SkillAdd />
       },
      {
         path: "/skill/list",
-        element: new ControllerSkill().List(),
+        element: <SkillList />
       },
       /////////////////////
       ////////////// reference
      {
         path: "/reference/view",
-        element: new ControllerReference().Views(),
+        element: () => {
+          const ControllerReference = new ControllerReference();
+          ControllerReference.componentDidMount();
+          return ControllerReference.Views();
+        },
       },
      {
         path: "/reference/add",
-        element: new ControllerReference().Add(),
+        element: () => {
+          const ControllerReference = new ControllerReference();
+          ControllerReference.componentDidMount();
+          return ControllerReference.Add();
+        },
       },
      {
         path: "/reference/list",
-        element: new ControllerReference().List(),
+        element: () => {
+          const ControllerReference = new ControllerReference();
+          ControllerReference.componentDidMount();
+          return ControllerReference.List();
+        },
       },
       /////////////////////
       ////////////// studie
      {
         path: "/studie/view",
-        element: new ControllerStudie().Views(),
+        element: () => {
+          const ControllerStudie = new ControllerStudie();
+          ControllerStudie.componentDidMount();
+          return ControllerStudie.Views();
+        },
       },
      {
         path: "/studie/add",
-        element: new ControllerStudie().Add(),
+        element: () => {
+          const ControllerStudie = new ControllerStudie();
+          ControllerStudie.componentDidMount();
+          return ControllerStudie.Add();
+        },
       },
      {
         path: "/studie/list",
-        element: new ControllerStudie().List(),
+        element: () => {
+          const ControllerStudie = new ControllerStudie();
+          ControllerStudie.componentDidMount();
+          return ControllerStudie.List();
+        },
       },
       /////////////////////
       ////////////// project
      {
         path: "/project/view",
-        element: new ControllerProject().Views(),
+        element: () => {
+          const ControllerProject = new ControllerProject();
+          ControllerProject.componentDidMount();
+          return ControllerProject.Views();
+        },
       },
      {
         path: "/project/add",
-        element: new ControllerProject().Add(),
+        element: () => {
+          const ControllerProject = new ControllerProject();
+          ControllerProject.componentDidMount();
+          return ControllerProject.Add();
+        },
       },
      {
         path: "/project/list",
-        element: new ControllerProject().List(),
+        element: () => {
+          const ControllerProject = new ControllerProject();
+          ControllerProject.componentDidMount();
+          return ControllerProject.List();
+        },
       },
       /////////////////////
       ////////////// experience
      {
         path: "/experience/view",
-        element: new ControllerExperience().Views(),
+        element: () => {
+          const ControllerExperience = new ControllerExperience();
+          ControllerExperience.componentDidMount();
+          return ControllerExperience.Views();
+        },
       },
      {
         path: "/experience/add",
-        element: new ControllerExperience().Add(),
+        element: () => {
+          const ControllerExperience = new ControllerExperience();
+          ControllerExperience.componentDidMount();
+          return ControllerExperience.Add();
+        },
       },
      {
         path: "/experience/list",
-        element: new ControllerExperience().List(),
+        element: () => {
+          const ControllerExperience = new ControllerExperience();
+          ControllerExperience.componentDidMount();
+          return ControllerExperience.List();
+        },
       },
     ]
   },
  ] 
  , { basename }
 );
+
 
 export default function App() : JSX.Element {
   return (<RouterProvider router={router} />);

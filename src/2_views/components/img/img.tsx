@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, lazy, Suspense } from "react";
+const LdDualRing = lazy(()=> import("../ld_dual_ring/ld_dual_ring"));
 
 interface IImgProps {
   src: string;
@@ -19,10 +20,12 @@ export default function Img(img: IImgProps) {
   }, [img.src]);
 
   return (
-    <img
-      className={img.className}
-      src={imageUrl}
-      alt={img.alt}
-    />
+    <Suspense fallback={<LdDualRing error={false} />} >
+      <img
+        className={img.className}
+        src={imageUrl}
+        alt={img.alt}
+      />
+    </Suspense>
   );
 }
