@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import "./view_data.css";
 import { ReactElement } from "react";
 import ModalWindow, {ModalType} from "../modal_window/modal_window";
+
 import { useState, useEffect } from "react";
 
 type ObjBtn = {
@@ -29,7 +30,7 @@ interface IViewDataProps<T extends object> {
 }
 
 export default function ViewData<T extends object>(props: IViewDataProps<T>) {
-  
+ 
   const navigate = useNavigate();
   const defaultRowsPerPage = 10; 
   

@@ -7,7 +7,6 @@ import Form, { InputProps, SelectProps, RadioProps, CheckProps } from "../form/f
 
 import "./add_data.css";
 
-
 interface IAddDataProps {
   initialState?: any;
   forms:  ( InputProps | SelectProps | RadioProps | CheckProps )[];
@@ -25,7 +24,6 @@ interface IAddDataProps {
   errorSendDataDialog?: string;
 }
 
-
 type Modal = {
   show: boolean,
   type: ModalType,
@@ -38,7 +36,6 @@ type Modal = {
 
 export default function AddData(props: IAddDataProps) : JSX.Element
 {
-  
   const [modal, setModal] = useState<Modal>({
     show: false,
     type: ModalType.notification,
@@ -60,72 +57,63 @@ export default function AddData(props: IAddDataProps) : JSX.Element
   function submit(state: any, setState: any, fildsErase: () => void ) {
     
     //setState((prevState: any) => { return {...prevState, loader: false}})
-    
+
     if(props.isFildsRequired(state)) {
       
       setModal({
       show: true,
       type: ModalType.error,
       tittle: props.errorTittle ?? "Error",
-      dialog: props.errorDialog ?? "Se require que algunos campos, verifique.",
+      dialog: props.errorDialog ?? "Some fields are required, please check.",
       onClickC: onClick,
       })
       
     }
     else {
-      
+
       setModal({
        show: true,
        type: ModalType.warning,
-       tittle: props.warningTittle ?? "Aviso",
-       dialog: props.warningDialog ?? "Enviado corectamente.",
+       tittle: props.warningTittle ?? "Warning",
+       dialog: props.warningDialog ?? "The data has been sent, continue with the operation.",
        onClickA: (_:any) => 
-       {
+       { 
           setState((prevState: any) => { return {...prevState, loader: true}});
           
           setModal((prevState)=>{return {...prevState, show: false}});
-          
-          setTimeout(()=>
-          {
-            
-            const newState : any = state;
-            delete newState.loader;
-            
-            if(props.post(newState)) {
-              setModal2((prevState) => { return {...prevState,
-              type: ModalType.notification,
-              tittle: props.notifiSendDataTittle ?? "Notificacion",
-              dialog: props.notifiSendDataDialog ?? "Enviado corectamente.",
-              show: true}});
-              
-              fildsErase();
-              
-              setState((prevState: any) => { return {...prevState, loader: false, erase: true}});
-              
-            } else {
-              setModal2((prevState) => {return {...prevState,
-              type: ModalType.error,
-              tittle: props.errorSendDataTittle ?? "Error",
-              dialog: props.errorSendDataDialog ??  "Ocurrio un error al enviar los datos.",
-              show: true}});
-              
-              setState((prevState: any) => { return {...prevState, loader: false}});
-              
-            }
 
-          }, 1000)
+          const newState : any = state;
+          delete newState.loader;
           
+          if(props.post(newState)) {
+           setModal2((prevState) => { return {...prevState,
+            type: ModalType.notification,
+            tittle: props.notifiSendDataTittle ?? "Notification",
+            dialog: props.notifiSendDataDialog ?? "Submitted successfully.",
+            show: true}});
+
+            fildsErase();
+
+            setState((prevState: any) => { return {...prevState, loader: false, erase: true}});
+              
+          } else {
+            setModal2((prevState) => {return {...prevState,
+            type: ModalType.error,
+            tittle: props.errorSendDataTittle ?? "Error",
+            dialog: props.errorSendDataDialog ?? "An error occurred while sending the data.",
+            show: true}});
+            
+            setState((prevState: any) => { return {...prevState, loader: false}});
+          }
        },
        onClickB: onClick,
       })
     }
-    
     setModal((prevState)=>{return {...prevState, show: true}});
   };
   
   return ( 
     <div className="container-add-references" >
-    
       <ModalWindow  
         show={modal2.show}
         type={modal2.type} 
@@ -133,7 +121,6 @@ export default function AddData(props: IAddDataProps) : JSX.Element
         dialog={modal2.dialog}
         onClick3={(_:any)=> setModal2((prevState)=>{return {...prevState, show: false}})}
       />
-      
       <Form
         initState={props?.initialState}
         forms={props.forms}
@@ -141,7 +128,6 @@ export default function AddData(props: IAddDataProps) : JSX.Element
         textSubmit={props.textSubmit}
         submit={submit}
       >
-      
         <ModalWindow 
           show={modal.show}
           type={modal.type} 
@@ -151,11 +137,8 @@ export default function AddData(props: IAddDataProps) : JSX.Element
           onClick2={modal.onClickB}
           onClick3={modal.onClickC}
         />
-        
       </Form>
-      
       <BanckButton icon="arrow_back" />
-      
     </div>
   )
 }

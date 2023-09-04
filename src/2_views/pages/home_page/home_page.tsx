@@ -9,7 +9,9 @@ export default function HomePage(_:IHomeProps) :JSX.Element {
   return (
   <div className="container-page " >
   
-    <ModalWindow show={true} type={ModalType.warning} tittle={"Informacion"} dialog={"Esta web usa el local storage."} 
+    <ModalWindow show={true} type={ModalType.warning} tittle={"Information"}
+    dialog={`Be cautious when storing data. Delete everything you save and do
+    not store data with compound words.`} 
     onClick3={(_)=>{}} />
   
     <label className="tittle" >Full stack developer </label>

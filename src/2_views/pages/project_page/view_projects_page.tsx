@@ -1,6 +1,8 @@
 
-import { lazy, Suspense } from "react";
+import { lazy, useState, useEffect } from "react";
 const LdDualRing = lazy(()=> import("../../components/ld_dual_ring/ld_dual_ring"));
+import ModalWindow, { ModalType } from "../../components/modal_window/modal_window";
+import dajt from "../../../4_data_access/get_data_access.tsx";
 
 const Project = lazy(()=> import("../../components/project/project"));
 
@@ -10,10 +12,6 @@ import OptionButton from "../../components/option_button/option_button";
 import IProject from "../../../1_models/project"
 import "./view_project_page.css"
 import "../view_page.css";
-
-interface IProjectProps {
-  projects: IProject[]
-}
 
 const buttons = [
   {
@@ -33,18 +31,32 @@ const buttons = [
   },
 ]
 
-export default function ViewProjectsPage(props: IProjectProps) : JSX.Element
+export default function ViewProjectsPage() : JSX.Element
 {
-    return (
-    <>
-      <Header tittle="Projects" color="" />
-      <OptionButton buttons={buttons} />
+ const [objState, setObj] = useState<ISkill[]>([]);
+ const [errorState, setError] = useState(false);
+ 
+ useEffect(()=>{
+  (new dajt('Projects')).get()
+  .then(arrayObj => {
+   if(!arrayObj) { setError(true); }
+   else { setObj(arrayObj); }
+  });
+ },[]);
+ 
+ const _project_ = objState.map(e => <Project Key={e.Key} Tittle={e.Tittle}
+ Description={e.Description} Tegnologys={e.Tegnologys}
+ Repositorys={e.Repositorys} />);
+ 
+ return (
+ <>
+  <Header tittle="Projects" color="" />
+  <OptionButton buttons={buttons} />
      
-      <div className="container-page" >
-        <Suspense fallback={<LdDualRing error={false} />} >
-          { props.projects.map(e => <Project Key={e.Key} Tittle={e.Tittle} Description={e.Description} Tegnologys={e.Tegnologys} Repositorys={e.Repositorys} />) }
-        </Suspense>
-      </div>
-    </>
-    )
+  <div className="container-page" >
+   {objState.length > 0 ? 
+   ( _project_ ) : 
+   ( <LdDualRing error={errorState} errorMessage={`Not there is connection to the firedatabase.`}  /> )}
+  </div>
+ </>)
 }

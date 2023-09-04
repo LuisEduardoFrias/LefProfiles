@@ -1,4 +1,6 @@
 
+import { lazy } from "react";
+
 import { useLocation } from 'react-router-dom';
 import AddData from "../../components/add_data/add_data";
 import IReference from "../../../1_models/reference";
@@ -7,7 +9,6 @@ import { Item, InputProps, SelectProps, RadioProps, CheckProps } from "../../com
 
 export default function AddReferencePage() : JSX.Element
 {
-  
   const location = useLocation();
   const _obj = location.state as IReference;
   
@@ -45,18 +46,17 @@ export default function AddReferencePage() : JSX.Element
   ])
   
   const isFildsRequired = (state:any) => {
-    return (!state?.Name || !state?.PhoneNumber);
+   return (!state?.Name || !state?.PhoneNumber);
   }
   
   return ( 
-    <div className="container-page" >
+   <div className="container-page" >
     <AddData 
-      forms={forms}
-      isFildsRequired={isFildsRequired}
-      tittle="Add Refecence"
-      textSubmit="send"
-      post={ _obj ? ControllerReference.Put : ControllerReference.Post }
-    />
-    </div>
+     forms={forms}
+     isFildsRequired={isFildsRequired}
+     tittle="Add Refecence"
+     textSubmit="send"
+     post={ _obj ? ControllerReference.Put : ControllerReference.Post } />
+   </div>
   )
 }

@@ -1,3 +1,6 @@
+
+import { lazy } from "react";
+
 import { useLocation } from 'react-router-dom';
 import AddData from "../../components/add_data/add_data";
 import IProject from "../../../1_models/project";
@@ -6,10 +9,9 @@ import { Item, InputProps, ArrayInputProps, TextareaProps } from "../../componen
 
 export default function AddProjectsPage() : JSX.Element
 {
-  
   const location = useLocation();
   const _obj = location.state as IProject;
-    
+
   const forms: ( InputProps | ArrayInputProps | TextareaProps )[] = [];
   
   if(_obj)
@@ -59,14 +61,13 @@ export default function AddProjectsPage() : JSX.Element
   }
   
   return ( 
-        <div className="container-page" >
+   <div className="container-page" >
     <AddData 
-      forms={forms}
-      isFildsRequired={isFildsRequired}
-      tittle="Add project"
-      textSubmit="send"
-      post={ _obj ? ControllerProject.Put : ControllerProject.Post }
-    />
-    </div>
+     forms={forms}
+     isFildsRequired={isFildsRequired}
+     tittle="Add project"
+     textSubmit="send"
+     post={ _obj ? ControllerProject.Put : ControllerProject.Post } />
+   </div>
   )
 }

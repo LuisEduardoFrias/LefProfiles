@@ -1,3 +1,6 @@
+
+import { lazy } from "react";
+
 import { useLocation } from 'react-router-dom';
 import AddData from "../../components/add_data/add_data";
 import IExperience from "../../../1_models/experience";
@@ -8,7 +11,7 @@ export default function AddExperiencePage() : JSX.Element
 {
   const location = useLocation();
   const _obj = location.state as IExperience;
-    
+
   const forms: ( InputProps | ArrayInputProps | TextareaProps )[] = [];
   
   if(_obj)
@@ -58,14 +61,13 @@ export default function AddExperiencePage() : JSX.Element
   }
   
   return ( 
-        <div className="container-page" >
+   <div className="container-page" >
     <AddData 
-      forms={forms}
-      isFildsRequired={isFildsRequired}
-      tittle="Add Experience"
-      textSubmit="send"
-      post={ _obj ? ControllerExperience.Put : ControllerExperience.Post }
-    />
-    </div>
+     forms={forms}
+     isFildsRequired={isFildsRequired}
+     tittle="Add Experience"
+     textSubmit="send"
+     post={ _obj ? ControllerExperience.Put : ControllerExperience.Post } />
+   </div>
   )
 }

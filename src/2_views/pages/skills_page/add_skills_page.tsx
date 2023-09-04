@@ -1,6 +1,5 @@
 
-import { lazy, Suspense } from "react";
-const LdDualRing = lazy(()=> import("../../components/ld_dual_ring/ld_dual_ring"));
+import { lazy } from "react";
 
 import AddData from "../../components/add_data/add_data";
 import { useLocation } from 'react-router-dom';
@@ -10,7 +9,6 @@ import { Item, InputProps, InputType } from "../../components/form/form";
 
 export default function AddSkillsPage() : JSX.Element
 {
-  
   const location = useLocation();
   const _obj = location.state as ISkill;
   
@@ -57,22 +55,18 @@ export default function AddSkillsPage() : JSX.Element
   ]);
 
   const isFildsRequired = (state:any) => {
-    const value:boolean=  (!state.Name || !state.UrlImage || !state.Experience );
-    return value;
+   const value:boolean=  (!state.Name || !state.UrlImage || !state.Experience );
+   return value;
   }
   
   return ( 
-    <div className="container-page" >
-      <Suspense fallback={<LdDualRing error={false} />} >
-      <AddData 
-      forms={forms}
-      initialState={_obj}
-      isFildsRequired={isFildsRequired}
-      tittle="Add Skill"
-      textSubmit="send"
-      post={ _obj ? ControllerSkill.Put : ControllerSkill.Post }
-      />
-      </Suspense>
-    </div>
-  )
+  <div className="container-page" >
+   <AddData 
+    forms={forms}
+    initialState={_obj}
+    isFildsRequired={isFildsRequired}
+    tittle="Add Skill"
+    textSubmit="send"
+    post={ _obj ? ControllerSkill.Put : ControllerSkill.Post } />
+  </div>)
 }

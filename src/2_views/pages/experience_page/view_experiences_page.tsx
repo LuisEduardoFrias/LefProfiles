@@ -1,6 +1,8 @@
 
-import { lazy, Suspense } from "react";
+import { lazy, useState, useEffect } from "react";
 const LdDualRing = lazy(()=> import("../../components/ld_dual_ring/ld_dual_ring"));
+import ModalWindow, { ModalType } from "../../components/modal_window/modal_window";
+import dajt from "../../../4_data_access/get_data_access.tsx";
 
 const Experience = lazy(()=> import("../../components/experience/experience"));
 
@@ -33,20 +35,30 @@ const buttons = [
   },
 ]
 
-export default function ViewExperiencesPage(props: IExperienceProps) : JSX.Element
+export default function ViewExperiencesPage() : JSX.Element
 {
-    return (
-    <>
-      <Header tittle="Experieneces" color="" />
-      <OptionButton buttons={buttons} />
-     
-      <div className="container-page" >
-        <Suspense fallback={<LdDualRing error={false} />} >
-          { props.experiences.map(e => <Experience Key={e.Key}
-          Company={e.Company} Description={e.Description} Position={e.Position} Tacks={e.Tacks}
-          /> )}
-        </Suspense>
-      </div>
-    </>
-    )
+ const [objState, setObj] = useState<ISkill[]>([]);
+ const [errorState, setError] = useState(false);
+ 
+ useEffect(()=>{
+  (new dajt('Experiences')).get()
+  .then(arrayObj => {
+   if(!arrayObj) { setError(true); }
+   else { setObj(arrayObj); }
+  });
+ },[]);
+ 
+ const _experience_ = objState.map(e => <Experience Key={e.Key} Company={e.Company} Description={e.Description} Position={e.Position} Tacks={e.Tacks} /> );
+  
+ return (
+ <>
+ <Header tittle="Experieneces" color="" />
+ <OptionButton buttons={buttons} />
+ 
+ <div className="container-page" >
+   {objState.length > 0 ? 
+   ( _experience_ ) : 
+   ( <LdDualRing error={errorState} errorMessage={`Not there is connection to the firedatabase.`}  /> )}
+ </div>
+ </>)
 }
