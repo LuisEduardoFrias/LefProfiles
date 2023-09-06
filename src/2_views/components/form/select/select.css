@@ -1,0 +1,21 @@
+
+.container-select {
+  padding: 5px 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  box-sizing: border-box;
+}
+
+.container-select label {
+  font-size: 18px;
+  font-weight: 900;
+  margin-left: 5px;
+  margin-bottom: 5px;
+  box-sizing: border-box;
+}
+
+.container-select select {
+  
+  box-sizing: border-box;
+}

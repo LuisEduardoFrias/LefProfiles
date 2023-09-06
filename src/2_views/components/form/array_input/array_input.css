@@ -1,0 +1,49 @@
+
+.container-arrayinput {
+  display: grid; 
+  grid-template-columns: 1fr 35px;
+  grid-template-rows: 35px 1fr;
+  grid-template-areas: "tittleArea buttonArea" "inputsArea inputsArea";
+  grid-row-gap: 10px; 
+  padding: 0px 10px 10px 10px;
+}
+
+.tittle-arrayinput { 
+  grid-area: tittleArea; 
+  margin-block: auto;
+
+}
+
+.button-arrayinput {
+  grid-area: buttonArea; 
+  
+}
+
+.button-arrayinput:active {
+  transform: scale(0.5);
+}
+
+.inputs-arrayinput { 
+  grid-area: inputsArea; 
+  display: flex;
+  flex-direction: column;
+  gap: 5px; 
+  max-height: 200px;
+  overflow-x: none;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.unitinput-arrayinput {
+  display: flex;
+  gap: 2px;
+}
+
+.unitinput-arrayinput button {
+  height: 13px;
+  width: 13px;
+}
+
+#input-arrayinput {
+  width: 100%;
+}

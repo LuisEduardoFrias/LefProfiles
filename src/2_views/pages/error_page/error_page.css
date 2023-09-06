@@ -1,0 +1,40 @@
+
+#error-page {
+  display: grid;
+  grid-template-columns:1fr;
+  grid-template-rows: 1fr 1fr 300px 1fr;
+  gap: 5px;
+  grid-template-areas: "a-h1" "a-h2" "img4" "a-p2";
+  padding: 20px 20px;
+}
+
+h1 {
+  grid-area: a-h1;
+  font-size: 30px;
+  text-align: center;
+} 
+h2 {
+  grid-area: a-h2;
+  font-size: 25px;
+  text-align: center;
+}
+
+.image404 {
+ margin: auto;
+ grid-area: img4;
+ width: 300px;
+ height: 300px;
+}
+
+#p1 {
+  grid-area: a-p1;
+  color: red;
+  font-size: 14px;
+  text-align: center;
+}
+
+#p2 {
+  grid-area: a-p2;
+  color: red;
+  text-align: center;
+}

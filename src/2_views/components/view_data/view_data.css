@@ -1,0 +1,132 @@
+.container-table {
+  overflow: auto;
+}
+
+.table-viewData {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-viewData caption {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.thead-viewData {
+  background-color: #16bbff;
+  color: #fff;
+}
+
+.tr-viewData th {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.tr-viewData {
+  background-color: #16bbff;
+}
+
+/* .tr-viewData th:nth-child(1) {
+  background-color: #0082ff;
+}
+
+.tr-viewData th:nth-child(2) {
+  background-color: #40a1ff;
+}
+
+.tr-viewData th:nth-child(3) {
+  background-color: #198eff;
+}
+
+.tr-viewData th:nth-child(4) {
+  background-color: #1c6ea4;
+}
+
+.tr-viewData th:nth-child(5) {
+  background-color: #c3e1ff;
+} */
+
+.tbody-viewData tr:nth-child(even) {
+  background-color: #237698;
+  color: #fff;
+}
+
+.tbody-viewData tr:nth-child(odd) {
+  background-color: transparent;
+  color: #fff;
+}
+
+/* .tbody-viewData tr:active {
+  background-color: #0360ff65;
+} */
+
+.tbody-viewData td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.foot-container-btn-viewData {
+  margin-block: 5px 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tbody-viewData tr.selected {
+  background-color: #005a7f;
+}
+
+.footBtn-viewData {
+  padding: 5px;
+  margin: auto 5px;
+  width: 30px;
+  height: 30px;
+  background-color: #0082ff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.column-edit {
+  width: 110px;
+}
+
+.column-delete {
+  width: 110px;
+}
+
+.btn-delete {
+  
+}
+
+.btn-delete button {
+  padding: 5px;
+  margin: 0 5px;
+  height: 30px;
+  border-radius: 10px;
+  background-color: #ff0000;
+  color: rgb(0, 0, 0);
+  border: none;
+  cursor: pointer;
+}
+
+.btn-edit {
+  
+}
+
+.btn-edit button {
+  padding: 5px;
+  margin: auto;
+  height: 30px;
+  border-radius: 10px;
+  background-color: #00ff00;
+  color: rgb(0, 0, 0);
+  border: none;
+  cursor: pointer;
+}
+
+.footBtn-viewData:hover {
+  background-color: #1c6ea4;
+}
