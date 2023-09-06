@@ -5,12 +5,6 @@ import RouterHome from "./2_views/router_home";
 import ErrorPage from "./2_views/pages/error_page/error_page";
 import HomePage from "./2_views/pages/home_page/home_page";
 
-// import ControllerSkill from "./3_controllers/controller_skill";
-// import ControllerReference from "./3_controllers/controller_reference";
-// import ControllerStudie from "./3_controllers/controller_studie";
-// import ControllerProject from "./3_controllers/controller_project";
-// import ControllerExperience from "./3_controllers/controller_experience";
-
 import ViewSkillsPage from "./2_views/pages/skills_page/view_skills_page";
 import ListSkillsPage from "./2_views/pages/skills_page/list_skills_page";
 import AddSkillsPage from "./2_views/pages/skills_page/add_skills_page";
@@ -33,87 +27,6 @@ import AddStudiesPage from "./2_views/pages/studie_page/add_studies_page";
 
 //const basename = process.env.NODE_ENV === 'production' ? '/LefProfiles' : '/';
 const basename = '/LefProfiles';
-
-// ////////////// skill
-// const SkillView = () :JSX.Element => {           
-//   const controllerSkill = new ControllerSkill({});
-//   controllerSkill.componentDidMount();
-//   return(controllerSkill.Views());
-// };
-// const SkillList = () :JSX.Element => {           
-//   const controllerSkill = new ControllerSkill({});
-//   controllerSkill.componentDidMount();
-//   return controllerSkill.List();
-// };
-// const SkillAdd = () :JSX.Element => {           
-//   const controllerSkill = new ControllerSkill({});
-//   controllerSkill.componentDidMount();
-//   return controllerSkill.Add();
-// };
-// ////////////// reference
-// const ReferenceView = () :JSX.Element => {           
-//   const ControllerReference = new ControllerReference({});
-//   ControllerReference.componentDidMount();
-//   return ControllerReference.Views();
-// };
-// const ReferenceAdd = () :JSX.Element => {           
-//   const ControllerReference = new ControllerReference({});
-//   ControllerReference.componentDidMount();
-//   return ControllerReference.Add();
-// };
-// const ReferenceList = () :JSX.Element => {           
-//   const ControllerReference = new ControllerReference({});
-//   ControllerReference.componentDidMount();
-//   return ControllerReference.List();
-// };
-// ////////////// studie
-// const StudieView = () :JSX.Element => {           
-//   const ControllerStudie = new ControllerStudie({});
-//   ControllerStudie.componentDidMount();
-//   return ControllerStudie.Views();
-// };
-// const StudieAdd = () :JSX.Element => {           
-//   const ControllerStudie = new ControllerStudie({});
-//   ControllerStudie.componentDidMount();
-//   return ControllerStudie.Add();
-// };
-// const StudieList = () :JSX.Element => {           
-//   const ControllerStudie = new ControllerStudie({});
-//   ControllerStudie.componentDidMount();
-//   return ControllerStudie.List();
-// };
-// ////////////// project
-// const ProjectView = () :JSX.Element => {           
-//   const ControllerProject = new ControllerProject({});
-//   ControllerProject.componentDidMount();
-//   return ControllerProject.Views();
-// };
-// const ProjectAdd = () :JSX.Element => {           
-//   const ControllerProject = new ControllerProject({});
-//   ControllerProject.componentDidMount();
-//   return ControllerProject.Add();
-// };
-// const ProjectList = () :JSX.Element => {           
-//   const ControllerProject = new ControllerProject({});
-//   ControllerProject.componentDidMount();
-//   return ControllerProject.List();
-// };
-// ////////////// experience
-// const ExperienceView = () :JSX.Element => {           
-//   const ControllerExperience = new ControllerExperience({});
-//   ControllerExperience.componentDidMount();
-//   return ControllerExperience.Views();
-// };
-// const ExperienceAdd = () :JSX.Element => {           
-//   const ControllerExperience = new ControllerExperience({});
-//   ControllerExperience.componentDidMount();
-//   return ControllerExperience.Add();
-// };
-// const ExperienceList = () :JSX.Element => {           
-//   const ControllerExperience = new ControllerExperience({});
-//   ControllerExperience.componentDidMount();
-//   return ControllerExperience.List();
-// };
 ////////////// 
 ////////////// 
 const router = createBrowserRouter(
