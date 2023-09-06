@@ -2,7 +2,7 @@
 import { lazy, useState, useEffect } from "react";
 const LdDualRing = lazy(()=> import("../../components/ld_dual_ring/ld_dual_ring"));
 import ModalWindow, { ModalType } from "../../components/modal_window/modal_window";
-import dajt from "../../../4_data_access/get_data_access.tsx";
+import Dajt from "../../../4_data_access/get_data_access.tsx";
 
 const Experience = lazy(()=> import("../../components/experience/experience"));
 
@@ -37,18 +37,18 @@ const buttons = [
 
 export default function ViewExperiencesPage() : JSX.Element
 {
- const [objState, setObj] = useState<ISkill[]>([]);
+ const [objState, setObj] = useState<IExperience[]>([]);
  const [errorState, setError] = useState(false);
  
  useEffect(()=>{
-  (new dajt('Experiences')).get()
-  .then(arrayObj => {
+  (new Dajt('Experiences')).get()
+  .then((arrayObj: IExperience[]) => {
    if(!arrayObj) { setError(true); }
    else { setObj(arrayObj); }
   });
  },[]);
  
- const _experience_ = objState.map(e => <Experience Key={e.Key} Company={e.Company} Description={e.Description} Position={e.Position} Tacks={e.Tacks} /> );
+ const _experience_ = objState.map((e: IExperience)=> <Experience Key={e.Key} Company={e.Company} Description={e.Description} Position={e.Position} Tacks={e.Tacks} /> );
   
  return (
  <>

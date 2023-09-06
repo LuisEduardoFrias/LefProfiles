@@ -1,0 +1,1 @@
+import{j as s,a as e}from"./index-562f4963.js";function m(a){return s.jsxs("div",{className:"skill-container",children:[s.jsx(e,{className:"skill-img",src:a.UrlImage,alt:a.Name}),s.jsx("label",{className:"skill-name",children:a.Name})]},a.Key)}export{m as default};

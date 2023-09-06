@@ -2,7 +2,7 @@
 import { lazy, useState, useEffect } from "react";
 const LdDualRing = lazy(()=> import("../../components/ld_dual_ring/ld_dual_ring"));
 import ModalWindow, { ModalType } from "../../components/modal_window/modal_window";
-import dajt from "../../../4_data_access/get_data_access.tsx";
+import Dajt from "../../../4_data_access/get_data_access.tsx";
 
 const Skill = lazy(()=> import("../../components/skill/skill"));
 const Porcentage = lazy(()=> import( "../../components/porcentage/porcentage"));
@@ -36,16 +36,16 @@ export default function ViewSkillsPage() : JSX.Element {
  const [errorState, setError] = useState(false);
  
  useEffect(()=>{
-  (new dajt('Skills')).get()
-  .then(arrayObj => {
+  (new Dajt('Skills')).get()
+  .then((arrayObj: ISkill[]) => {
    if(!arrayObj) { setError(true); }
    else { setSkill(arrayObj); }
   });
  },[]);
  
- const _Skills_ = skillState.map(e => <Skill Key={e.Key} Name={e.Name} UrlImage={e.UrlImage} Experience={e.Experience} /> );
+ const _Skills_ = skillState.map((e: ISkill) => <Skill Key={e.Key} Name={e.Name} UrlImage={e.UrlImage} Experience={e.Experience} /> );
  
- const _Porcentage_ = skillState.map(e => <Porcentage index={Number(e.Key)} value={e.Experience} direction="row" tittle={e.Name} />);
+ const _Porcentage_ = skillState.map((e: ISkill) => <Porcentage index={Number(e.Key)} value={e.Experience} direction="row" tittle={e.Name} />);
  
  return (
  <>

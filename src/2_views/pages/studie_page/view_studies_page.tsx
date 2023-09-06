@@ -2,7 +2,7 @@
 import { lazy, useState, useEffect } from "react";
 const LdDualRing = lazy(()=> import("../../components/ld_dual_ring/ld_dual_ring"));
 import ModalWindow, { ModalType } from "../../components/modal_window/modal_window";
-import dajt from "../../../4_data_access/get_data_access.tsx";
+import Dajt from "../../../4_data_access/get_data_access.tsx";
 
 const Studie = lazy(()=> import("../../components/studie/studie"));
 const Header = lazy(()=> import("../../components/header/header"));
@@ -36,14 +36,14 @@ export default function ViewStudiesPage() : JSX.Element
  const [errorState, setError] = useState(false);
  
  useEffect(()=>{
-  (new dajt('Studies')).get()
-  .then(arrayObj => {
+  (new Dajt('Studies')).get()
+  .then((arrayObj: IStudie[])=> {
    if(!arrayObj) { setError(true); }
    else { setObj(arrayObj); }
   });
  },[]);
  
- const _studis_ = objState.map(e => <Studie Key={e.Key} Tittle={e.Tittle} Url={e.Url} Institution={e.Institution} TittleImg={e.TittleImg} MoreEducation={e.MoreEducation} />)
+ const _studis_ = objState.map((e: IStudie) => <Studie Key={e.Key} Tittle={e.Tittle} Url={e.Url} Institution={e.Institution} TittleImg={e.TittleImg} MoreEducation={e.MoreEducation} />)
 
  return (
  <>

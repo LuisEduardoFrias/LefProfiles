@@ -2,7 +2,7 @@
 import { lazy, useState, useEffect } from "react";
 const LdDualRing = lazy(()=> import("../../components/ld_dual_ring/ld_dual_ring"));
 import ModalWindow, { ModalType } from "../../components/modal_window/modal_window";
-import dajt from "../../../4_data_access/get_data_access.tsx";
+import Dajt from "../../../4_data_access/get_data_access.tsx";
 
 import Reference from "../../components/reference/reference";
 
@@ -33,18 +33,18 @@ const buttons = [
 
 export default function ViewReferencesPage() : JSX.Element
 {
- const [objState, setObj] = useState<ISkill[]>([]);
+ const [objState, setObj] = useState<IReference[]>([]);
  const [errorState, setError] = useState(false);
  
  useEffect(()=>{
-  (new dajt('References')).get()
-  .then(arrayObj => {
+  (new Dajt('References')).get()
+  .then((arrayObj: IReference[]) => {
    if(!arrayObj) { setError(true); }
    else { setObj(arrayObj); }
   });
  },[]);
  
- const _references_ = objState.map((e,index) => Reference(e, index));
+ const _references_ = objState.map((e: IReference,index) => Reference(e, index));
  
  return (
  <>

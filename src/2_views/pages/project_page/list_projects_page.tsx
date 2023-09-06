@@ -1,7 +1,7 @@
 
 import { useState, useEffect, lazy } from "react";
 const LdDualRing = lazy(()=> import("../../components/ld_dual_ring/ld_dual_ring"));
-import dajt from "../../../4_data_access/get_data_access.tsx";
+import Dajt from "../../../4_data_access/get_data_access.tsx";
 
 import IProject from "../../../1_models/project"
 import BanckButton from "../../components/back_button/back_button";
@@ -13,11 +13,11 @@ export default function ListProjectPage() : JSX.Element
  const [objState, setObj] = useState<IProject[]>([]);
  
  useEffect(()=>{
-  new dajt('Skills').get()
-  .then(arrayObj => {
+  new Dajt('Projects').get()
+  .then((arrayObj: IProject[])=> {
    setObj(arrayObj);
   })
-  .catch(error => {
+  .catch((error:any) => {
    console.error(error);
   })
  },[]);

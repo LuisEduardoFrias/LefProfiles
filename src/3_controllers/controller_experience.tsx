@@ -1,26 +1,38 @@
 
 import {Experience} from "../1_models/experience";
-import daj from "../4_data_access/data_access.js";
+import Dajt from "../4_data_access/get_data_access.tsx";
 
 export default class ControllerExperience {
  
- private objDataBase: string = 'Experiences';
+ static objDataBase: string = 'Experiences';
  
  static Post(newExperience: Experience) : boolean {
-  return (new dajt(objDataBase)).post(newExperience)
-  .then(response => response )
-  .catch(error => console.error(error) );
+   try {
+    const response = (new Dajt(ControllerExperience.objDataBase)).post(newExperience);
+     return response;
+   } catch (error) {
+     console.error(error);
+     return false;
+   }
  }
  
  static Put(updateExperience: Experience) : boolean {
-  return (new dajt(objDataBase)).put(updateExperience)
-  .then(response => response )
-  .catch(error => console.error(error) );
+   try {
+    const response = (new Dajt(ControllerExperience.objDataBase)).update(updateExperience);
+     return response;
+   } catch (error) {
+     console.error(error);
+     return false;
+   }
  }
  
  static Delete(key: string) : boolean {
-  return (new dajt(objDataBase)).delete(key)
-  .then(response => response )
-  .catch(error => console.error(error) );
+   try {
+    const response = (new Dajt(ControllerExperience.objDataBase)).delete(key);
+     return response;
+   } catch (error) {
+     console.error(error);
+     return false;
+   }
  }
 }

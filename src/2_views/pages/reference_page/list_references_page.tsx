@@ -1,7 +1,7 @@
 
 import { useState, useEffect, lazy } from "react";
 const LdDualRing = lazy(()=> import("../../components/ld_dual_ring/ld_dual_ring"));
-import dajt from "../../../4_data_access/get_data_access.tsx";
+import Dajt from "../../../4_data_access/get_data_access.tsx";
 
 import IReference from "../../../1_models/reference"
 import BanckButton from "../../components/back_button/back_button";
@@ -13,11 +13,11 @@ export default function ListReferencesPage() : JSX.Element
  const [objState, setObj] = useState<IReference[]>([]);
  
  useEffect(()=>{
-  new dajt('Skills').get()
-  .then(arrayObj => {
+  new Dajt('References').get()
+  .then((arrayObj: IReference[]) => {
    setObj(arrayObj);
   })
-  .catch(error => {
+  .catch((error:any) => {
    console.error(error);
   })
  },[]);

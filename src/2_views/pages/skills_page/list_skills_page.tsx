@@ -1,7 +1,7 @@
 
 import { useState, useEffect, lazy } from "react";
 const LdDualRing = lazy(()=> import("../../components/ld_dual_ring/ld_dual_ring"));
-import dajt from "../../../4_data_access/get_data_access.tsx";
+import Dajt from "../../../4_data_access/get_data_access.tsx";
 
 import ISkill from "../../../1_models/skill";
 import BanckButton from "../../components/back_button/back_button";
@@ -13,11 +13,11 @@ export default function ListSkillsPage() : JSX.Element
  const [skillState, setSkill] = useState<ISkill[]>([]);
  
  useEffect(()=>{
-  new dajt('Skills').get()
-  .then(arrayObj => {
+  new Dajt('Skills').get()
+  .then((arrayObj: ISkill[]) => {
    setSkill(arrayObj);
   })
-  .catch(error => {
+  .catch((error: any) => {
    console.error(error);
   })
  },[]);

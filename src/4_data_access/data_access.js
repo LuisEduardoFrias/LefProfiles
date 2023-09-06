@@ -1,5 +1,5 @@
 
-export default class daj {
+export default class gdb {
   
   //
   // get
@@ -13,7 +13,7 @@ export default class daj {
   //
   static post(obj) {
    
-    const pro = Reflect.get(data, `${obj.constructor.name}s`);
+    let pro = [...Reflect.get(data, `${obj.constructor.name}s`)];
 
     if (pro === undefined) {
       

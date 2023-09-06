@@ -2,7 +2,7 @@
 import { lazy, useState, useEffect } from "react";
 const LdDualRing = lazy(()=> import("../../components/ld_dual_ring/ld_dual_ring"));
 import ModalWindow, { ModalType } from "../../components/modal_window/modal_window";
-import dajt from "../../../4_data_access/get_data_access.tsx";
+import Dajt from "../../../4_data_access/get_data_access.tsx";
 
 const Project = lazy(()=> import("../../components/project/project"));
 
@@ -33,26 +33,24 @@ const buttons = [
 
 export default function ViewProjectsPage() : JSX.Element
 {
- const [objState, setObj] = useState<ISkill[]>([]);
+ const [objState, setObj] = useState<IProject[]>([]);
  const [errorState, setError] = useState(false);
  
  useEffect(()=>{
-  (new dajt('Projects')).get()
-  .then(arrayObj => {
+  (new Dajt('Projects')).get()
+  .then((arrayObj: IProject[]) => {
    if(!arrayObj) { setError(true); }
    else { setObj(arrayObj); }
   });
  },[]);
  
- const _project_ = objState.map(e => <Project Key={e.Key} Tittle={e.Tittle}
- Description={e.Description} Tegnologys={e.Tegnologys}
- Repositorys={e.Repositorys} />);
+ const _project_ = objState.map((e: IProject) => (<Project Key={e.Key} Tittle={e.Tittle} Description={e.Description} Tegnologys={e.Tegnologys} Repositorys={e.Repositorys} />) );
  
  return (
  <>
   <Header tittle="Projects" color="" />
   <OptionButton buttons={buttons} />
-     
+  
   <div className="container-page" >
    {objState.length > 0 ? 
    ( _project_ ) : 

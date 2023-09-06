@@ -1,26 +1,38 @@
 
 import {Project} from "../1_models/project";
-import daj from "../4_data_access/data_access.js";
+import Dajt from "../4_data_access/get_data_access.tsx";
 
 export default class ControllerProject {
  
- private objDataBase: string = 'Projects';
+ static objDataBase: string = 'Projects';
  
  static Post(newProject: Project) : boolean {
-  return (new dajt(objDataBase)).post(newProject)
-  .then(response => response )
-  .catch(error => console.error(error) );
+   try {
+    const response = (new Dajt(ControllerProject.objDataBase)).post(newProject);
+     return response;
+   } catch (error) {
+     console.error(error);
+     return false;
+   }
  }
  
  static Put(updateProject: Project) : boolean {
-  return (new dajt(objDataBase)).put(updateProject)
-  .then(response => response )
-  .catch(error => console.error(error) );
+   try {
+    const response = (new Dajt(ControllerProject.objDataBase)).update(updateProject);
+     return response;
+   } catch (error) {
+     console.error(error);
+     return false;
+   }
  }
  
  static Delete(key: string) : boolean {
-  return (new dajt(objDataBase)).delete(key)
-  .then(response => response )
-  .catch(error => console.error(error) );
+   try {
+    const response = (new Dajt(ControllerProject.objDataBase)).delete(key);
+     return response;
+   } catch (error) {
+     console.error(error);
+     return false;
+   }
  }
 }
